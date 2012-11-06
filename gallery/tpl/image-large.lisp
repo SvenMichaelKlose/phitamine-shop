@@ -1,0 +1,16 @@
+(div :class "originalview"
+  (h1 ,(template-param-value :title) (img :src ,(flag-src (template-param-value :country))))
+  (a :class "back" :href ,(template-param-value :link-back) ,(lang de "12er&#8208;&Uuml;bersicht" en "View by the dozen"))
+  ,@(gallery-browser)
+  ,@(& (logged-in?)
+       `(,(? (== "1" (template-param-value :f_public))
+             (lang de "(&ouml;ffentlich)" en "(public)")
+             (lang de "(nicht &ouml;ffentlich)" en "(not public)"))))
+  (a :href ,(template-param-value :image-src) :class "jqzoomlink" :title ,(template-param-value :title)
+    (img :class "original" :src ,(template-param-value :image-src)))
+  (p "&euro;" ,(template-param-value :price))
+;  (a :href ,(action-url t :params (list (cons :action "cart-add")
+;                                        (cons :id (template-param-value :id))))
+;    ,(lang de "Kaufen..."
+;           en "Buy..."))
+  ,@(gallery-browser))

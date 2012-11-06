@@ -1,0 +1,6 @@
+,@(& (cart-has-undo?)
+     `((a :href ,(action-url t :params (list (cons :action "cart-undo")))
+         "Undo (" ,(cart-num-undos) " " ,(lang de "Schritte" en "steps") ")")))
+,@(& (cart-has-redo?)
+     `((a :href ,(action-url t :params (list (cons :action "cart-redo")))
+         "Redo (" ,(cart-num-redos) " " ,(lang de "Schritte" en "steps") ")")))
