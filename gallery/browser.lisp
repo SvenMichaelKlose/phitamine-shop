@@ -23,7 +23,9 @@
                                                               ""))))))))
 
 (defun get-countries ()
-  (get-distinct-images 'country :where (gallery-image-selection-by-user)))
+  (get-distinct-images 'country :where (gallery-image-selection-by-user)
+                                :order-by "country"
+                                :direction "asc"))
 
 (defun tpl-gallery-country-selection ()
   `(div :class "countries"
