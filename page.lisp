@@ -27,7 +27,7 @@
                    (cons 'link-cart    (navi-url 'cart))
                    (cons 'link-contact (navi-url 'contact))
                    (cons 'link-upload  (navi-url 'upload-images))
-                   (cons 'link-imprint (action-url 'imprint))
+                   (cons 'link-imprint (action-url (components-w/o-port 'content) :add 'imprint))
                    (cons 'alias        (user-alias)))))
 
 (defun navigation ()
