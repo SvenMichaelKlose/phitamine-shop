@@ -13,8 +13,8 @@
     (send-header :mime-type (assoc-value 'type !)
                  :mod-time (strtotime (assoc-value 't_create !))
                  :max-age 3600)
-    (file_get_contents (funcall path-maker (assoc-value 'id_user !)
-                                           (assoc-value 'name !))))
+    (princ (file_get_contents (funcall path-maker (assoc-value 'id_user !)
+                                                  (assoc-value 'name !)))))
   (quit))
 
 (defun thumbnail (x) (generate-gallery-image #'path-thumbnail x))
