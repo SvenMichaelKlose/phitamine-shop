@@ -2,8 +2,6 @@
 
 (load "phitamine/make-project.lisp")
 
-(= *transpiler-assert* nil)
-
 (make-phitamine-project "Shop Hope Stamps"
                         '("db-tables.lisp"
                           "page.lisp"
@@ -16,6 +14,7 @@
                           "gallery/remove.lisp"
                           "gallery/browser.lisp"
                           "gallery/parse-request.lisp"
+                          "gallery/title.lisp"
                           "gallery/toplevel.lisp"
                           "login.lisp"
                           "contact.lisp"

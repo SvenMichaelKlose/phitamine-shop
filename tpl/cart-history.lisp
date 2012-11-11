@@ -1,6 +1,6 @@
 ,@(& (cart-has-undo?)
-     `((a :href ,(action-url t :params (list (cons :action "cart-undo")))
+     `((a :href ,(action-url :add 'cart-undo)
          "Undo (" ,(cart-num-undos) " " ,(lang de "Schritte" en "steps") ")")))
 ,@(& (cart-has-redo?)
-     `((a :href ,(action-url t :params (list (cons :action "cart-redo")))
+     `((a :href ,(action-url :add 'cart-redo)
          "Redo (" ,(cart-num-redos) " " ,(lang de "Schritte" en "steps") ")")))

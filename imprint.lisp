@@ -1,12 +1,11 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(define-page tpl-imprint :path "tpl/imprint.lisp")
+(define-template tpl-imprint :path "tpl/imprint.lisp")
 
-(defun imprint (n x)
-  (set-action
+(defun imprint (x)
+  (set-port
     (= (page-title) (lang de "Impressum" en "Imprint"))
     (tpl-imprint))
-  (keep-components n)
-  x)
+  nil)
 
 (define-action imprint)

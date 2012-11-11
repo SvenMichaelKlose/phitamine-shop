@@ -5,9 +5,9 @@
 (defun css-path ()
   (+ (href *_SERVER* "DOCUMENT_ROOT") *action-base-url* "/css/main.css"))
 
-(defun css-upload ()
+(defun css-upload (x)
   (awhen (form-files "css")
-    (file_put_contents (css-path) (file_get_contents (assoc-value :tmp-name !.))))
-  (request-action-redirect "cssdone"))
+    (file_put_contents (css-path) (file_get_contents (assoc-value 'tmp-name !.))))
+  (action-redirect :add 'cssdone))
 
-(define-navi-action css-upload)
+(define-action css-upload)

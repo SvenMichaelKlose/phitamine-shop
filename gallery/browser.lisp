@@ -1,16 +1,17 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(defun gallery-browser ()
-  (with-pagination (template-param-value :pagination)
-    (cons `(div :class "position" ,(+ (with (from (1+ (pagination-offset pagination))
-                                             to (alet (+ (pagination-offset pagination) size)
-                                                  (? (< total !) total !)))
-                                        (? (== from to)
-                                           from
-                                           (+ from "&#8208; " to)))
-                                      (lang de " von " en " of ")
-                                      total))
-            (paginate pagination :component-maker [+ (butlast (apply #'append *components*)) (list _)]
+(defun tpl-gallery-browser ()
+  (with-pagination *gallery-pagination*
+    (cons `(div :class "position"
+             ,@(when tpl-range?
+                 (list (+ (with (from (pagination-from pagination)
+                                 to   (pagination-to pagination))
+                            (? (== from to)
+                               from
+                               (+ from "&#8208; " to)))
+                          (lang de " von " en " of ")
+                          total))))
+            (paginate pagination :component-maker [+ (butlast (tree-list *components*)) (list _)]
                                  :item-maker #'((typ idx)
                                                   (? *gallery-images*
                                                      `(,(? (eq 'page typ)
@@ -22,11 +23,11 @@
                                                               ""))))))))
 
 (defun get-countries ()
-  (get-distinct-images :country :where (gallery-image-selection-by-user)))
+  (get-distinct-images 'country :where (gallery-image-selection-by-user)))
 
-(defun gallery-country-selection ()
+(defun tpl-gallery-country-selection ()
   `(div :class "countries"
-     ,@(filter ^(a :href ,(action-url `((country ,_) (gallery 1)))
+     ,@(filter ^(a :href ,(action-url (list 'country _ 'gallery 1))
                    ,@(when (string== *gallery-country* _)
                        '(:class "selected"))
                   (div
@@ -35,9 +36,8 @@
                   (span ,_))
                (get-countries))))
 
-(defun country (n x)
-  (keep-components n x.)
-  (= *gallery-country* x.)
-  .x)
+(defun country (x)
+  (= *gallery-country* .x.)
+  (values (list x. .x.) ..x))
 
-(define-action country)                                                                                                                                        
+(define-action country)

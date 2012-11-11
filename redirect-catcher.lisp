@@ -2,7 +2,8 @@
 
 (defmacro define-redirect-catcher ((name &key (status nil)) &rest body)
   `(progn
-     (defun ,name ()
-       (!? status (= *navi-status* !))
-       ,@body)
+     (defun ,name (x)
+       ,@(!? status `((= *navi-status* ,!)))
+       ,@body
+       nil)
      (define-action ,name)))
