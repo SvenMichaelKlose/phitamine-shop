@@ -12,12 +12,12 @@
   (session_destroy)
   (= (session 'id)    nil)
   (= (session 'alias) nil)
-  (action-redirect :add 'logoutdone))
+  (action-redirect :remove 'login :add 'logoutdone))
 
 (defun login-ok (user)
   (= (session 'id)    (assoc-value 'id user))
   (= (session 'alias) (assoc-value 'alias user))
-  (action-redirect :add 'logindone))
+  (action-redirect :remove 'login :add 'logindone))
 
 (defun encrypt-password (x)
   (areplace x (list (cons 'password (md5 (assoc-value 'password x))))))
