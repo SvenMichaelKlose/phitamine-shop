@@ -36,8 +36,8 @@
   (set-port (tpl-navigation-upload))
   t)
 
-(define-action upload-images :group upload)
+(define-action upload-images :group gallery-upload)
 
 (define-redirect-catcher (uploaddone :status (lang de "Ihre Bilder wurden eingef&uuml;gt."
                                                    en "Your images have been added.")))
-(set-action-group 'uploaddone 'upload)
+(set-action-group 'uploaddone 'gallery-upload)
