@@ -1,6 +1,6 @@
 (form :action "" :method "post" :enctype "multipart/form-data"
   (h1 "Upload")
-  (a :class "cancel" :href ,(navi-reset-url) ,(lang de "zur&uuml;ck" en "back"))
+  (a :class "cancel" :href ,(navi-url) ,(lang de "zur&uuml;ck" en "back"))
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")

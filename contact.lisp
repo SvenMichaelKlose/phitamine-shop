@@ -21,6 +21,8 @@
   (set-port (tpl-navigation-contact))
   .x)
 
+(define-action contact :group contact)
+
 (define-redirect-catcher (contactdone :status (lang de "Ihre Nachricht wurde versendet."
                                                     en "Your message has been sent.")))
-(define-action contact :group contact)
+(set-action-group 'contactdone 'contact)

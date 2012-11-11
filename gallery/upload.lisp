@@ -26,15 +26,18 @@
                     (t_create ,(date "Y-m-d H:i:s"))))))
 
 (defun create-images (files)
+  (create-image-paths (user-id))
   (filter #'create-image files)
   (action-redirect :remove 'upload-images :add 'uploaddone))
 
-(defun upload-images ()
-  (create-image-paths (user-id))
-  (= *navi-template* #'tpl-navigation-upload)
+(defun upload-images (x)
   (!? (form-files 'image)
-      (create-images !)))
+      (create-images !))
+  (set-port (tpl-navigation-upload))
+  t)
+
+(define-action upload-images :group upload)
 
 (define-redirect-catcher (uploaddone :status (lang de "Ihre Bilder wurden eingef&uuml;gt."
                                                    en "Your images have been added.")))
-(define-action upload-images :group upload)
+(set-action-group 'uploaddone 'upload)

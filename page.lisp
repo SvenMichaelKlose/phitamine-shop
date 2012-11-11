@@ -11,6 +11,9 @@
 (define-template tpl-navigation-upload  :path "tpl/navigation-upload.lisp")
 (define-template tpl-main               :path "tpl/main.lisp")
 
+(defun navi-url (&optional (x nil))
+  (action-url (components-w/o-port 'navi) :add x))
+
 (defun navi-status (&key (class nil))
   (& (| *navi-status* *login-status*)
      `((p ,@(!? class `(:class ,!))
@@ -19,11 +22,11 @@
 
 (defun navi-template (x)
   (funcall x (list (cons 'link-home    (action-url *home-components*))
-                   (cons 'link-login   (action-url :add 'login))
-                   (cons 'link-logout  (action-url :add 'logout))
-                   (cons 'link-cart    (action-url :add 'cart))
-                   (cons 'link-contact (action-url :add 'contact))
-                   (cons 'link-upload  (action-url :add 'upload-images))
+                   (cons 'link-login   (navi-url 'login))
+                   (cons 'link-logout  (navi-url 'logout))
+                   (cons 'link-cart    (navi-url 'cart))
+                   (cons 'link-contact (navi-url 'contact))
+                   (cons 'link-upload  (navi-url 'upload-images))
                    (cons 'link-imprint (action-url 'imprint))
                    (cons 'alias        (user-alias)))))
 
@@ -31,9 +34,6 @@
   (navi-template (? (logged-in?)
                     #'tpl-navigation-login
                     #'tpl-navigation-nologin)))
-
-(defun navi-reset-url ()
-  (action-url (remove-if [eq 'navi (component-port _.)] *components*)))
 
 (defun page-title ()      *page-title*)
 (defun (= page-title) (x) (= *page-title* (+ "Shop Hope Stamps &#8208 " x)))
