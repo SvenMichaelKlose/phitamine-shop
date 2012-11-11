@@ -7,7 +7,7 @@
     (link :rel "stylesheet" :type "text/css" :href ,(+ *action-base-url* "/css/jquery.jqzoom.css"))
     (script :type "text/javascript" :src ,(+ *action-base-url* "/js/jquery-1.6.js") "")
     (script :type "text/javascript" :src ,(+ *action-base-url* "/js/jquery.jqzoom-core-pack.js") "")
-    (script :type "text/javascript" ,*js-jqzoom*))
+    ,*js-jqzoom*)
   (body
     ,@(when (| (navi-status) (logged-in?))
         `((div :class "status"
