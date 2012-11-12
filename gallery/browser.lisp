@@ -11,7 +11,9 @@
                                (+ from "&#8208; " to)))
                           (lang de " von " en " of ")
                           total))))
-            (paginate pagination :component-maker [+ (butlast (tree-list *components*)) (list _)]
+            (paginate pagination :component-maker [? *gallery-images*
+                                                     (action-url :update (list (list 'large _)))
+                                                     (action-url :update (list (list 'gallery _)))]
                                  :item-maker #'((typ idx)
                                                   (? *gallery-images*
                                                      `(,(? (eq 'page typ)
