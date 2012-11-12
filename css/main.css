@@ -703,3 +703,7 @@ form  > label {
 .last:hover{	
 	background: url('/preview/shophope/media/last_hover.png') no-repeat;
 }
+
+.cart_item img {
+    width: 100px;
+}

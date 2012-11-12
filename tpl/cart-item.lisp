@@ -1,4 +1,4 @@
-(div
+(div :class "cart_item"
   (p ,(template-param-value 'title))
   (a :href ,(action-url `(gallery 1 large ,(template-param-value 'id)))
     (img :src ,(thumbnail-src (find-image `(id . ,(template-param-value 'id))))))

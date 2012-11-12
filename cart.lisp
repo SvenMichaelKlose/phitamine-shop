@@ -31,7 +31,7 @@
   `(= (cart-current) (filter [,@body] (cart-current))))
 
 (defun cart-redirect ()
-  (action-redirect :add 'cart))
+  (action-redirect))
 
 (defun cart-undo (x)
   (cart-add-redo)
@@ -52,24 +52,33 @@
 
 (defun cart-add (x)
   (cart-add-undo)
-  (let id (request :id)
+  (let id (request 'id)
     (!? (cart-item id)
         (filter-cart (? (== _. id)
                         (cons _. (1+ ._))
                         _))
-        (acons! x 1 (cart-current))))
+        (acons! .x. 1 (cart-current))))
   (cart-redirect))
 
+(defun cart-price-total ()
+  (let total 0
+    (dolist (i (cart-current) total)
+      (+! total (number (assoc-value 'price (find-image `(id . ,i.))))))))
+
 (defun cart-items ()
-  (filter [tpl-cart-item (+ `((count ,._))
-                            (find-image `(id ,_.)))]
-          (cart-current)))
+  (let count 0
+    (filter [tpl-cart-item (+ `((count . ,(1+! count)))
+                              (find-image `(id . ,_.)))]
+            (cart-current))))
+
+(defun cart-num-items ()
+  (length (cart-current)))
 
 (defun cart (x)
   (set-port
     (? (has-cart?)
-       (tpl-cart))
-       (tpl-cart-empty))
+       (tpl-cart)
+       (tpl-cart-empty)))
   1)
 
 (defmacro define-cart-action (name)
