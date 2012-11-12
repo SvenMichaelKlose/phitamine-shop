@@ -3,41 +3,7 @@
 (define-template tpl-gallery-index       :path "gallery/tpl/index.lisp")
 (define-template tpl-gallery-empty       :path "gallery/tpl/empty.lisp")
 (define-template tpl-gallery-image       :path "gallery/tpl/image.lisp")
-(define-template tpl-gallery-image-large :path "gallery/tpl/image-large.lisp")
 (define-template tpl-gallery-image-form  :path "gallery/tpl/image-form.lisp")
-
-(defvar *gallery-images* nil)
-(defvar *gallery-page* nil)
-(defvar *gallery-pagination* nil)
-(defvar *image-index* nil)
-
-(defun gallery-image-selection-by-user ()
-  (unless (logged-in?)
-    `((f_public . "1"))))
-
-(defun gallery-image-selection ()
-  (+ (!? *gallery-country*
-         `((country . ,!)))
-     (gallery-image-selection-by-user)))
-
-(defun gallery-large (x)
-  (let old-components (copy-tree *components*)
-    (set-port
-      (with (images (find-images (gallery-image-selection))
-             page (number .x.)
-             pagination (make-pagination :page page
-                                         :size 1
-                                         :total (get-image-count (gallery-image-selection)))
-             img (elt images (1- page)))
-        (= *gallery-pagination* pagination)
-        (= *gallery-page* (pagination-page pagination))
-        (= *gallery-images* images)
-        (= (page-title) (+ (assoc-value 'title img) " (" (assoc-value 'country img) ")"))
-        (tpl-gallery-image-large (+ `((image-src  . ,(original-src img))
-                                      (link-back  . ,(action-url old-components))
-                                      (pagination . ,pagination))
-                                    img)))))
-  2)
 
 ; XXX doesn't quasiquote properly in backquote with pairs in COMPILE-BACKQUOTE.
 (defun make-image (pagination img)
@@ -74,5 +40,4 @@
             (tpl-gallery-empty))))
     (values `(,x. ,page) ..x)))
 
-(define-action large :handler #'gallery-large)
 (define-action gallery)

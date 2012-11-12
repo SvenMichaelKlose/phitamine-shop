@@ -1,5 +1,9 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(defvar *gallery-country* nil)
+(defvar *gallery-page* nil)
+(defvar *gallery-pagination* nil)
+
 (defun tpl-gallery-browser ()
   (with-pagination *gallery-pagination*
     (cons `(div :class "position"
