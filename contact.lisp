@@ -1,13 +1,15 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(defvar *contact-to* nil)
+(defvar *contact-subject* nil)
+
 (defun contact-mail-header ()
   (alet (assoc-value 'email (form-data))
     (+ "From: " ! *terpri*
        "Reply-To: " ! *terpri*)))
 
-(dont-obfuscate mail)
-
 (defun send-contact-mail ()
+  (dont-obfuscate mail)
   (mail *contact-to* *contact-subject*
         (assoc-value 'text (form-data))
         (contact-mail-header))

@@ -3,7 +3,7 @@
 (define-redirect-catcher (cssdone :status "Oh, gro&szlig;er Meister, Dein neues CSS wurde &uuml;bernommen."))
 
 (defun css-path ()
-  (+ (href *_SERVER* "DOCUMENT_ROOT") *base-url* "/css/main.css"))
+  (+ (_server "DOCUMENT_ROOT") *base-url* "/css/main.css"))
 
 (defun css-upload (x)
   (awhen (form-files "css")

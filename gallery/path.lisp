@@ -1,5 +1,7 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(defvar *gallery-archive-path* nil)
+
 (defun image-path (section user-id)
   (string-concat (href *_SERVER* "DOCUMENT_ROOT") *gallery-archive-path* "/" user-id "/" section))
 

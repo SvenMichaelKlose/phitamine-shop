@@ -1,5 +1,8 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(defvar *thumbnail-width* nil)
+(defvar *thumbnail-height* nil)
+
 (defun create-thumbnail (name)
   (alet (new *Imagick (path-original (user-id) name))
     (!.scale-image *thumbnail-width* *thumbnail-height* t)

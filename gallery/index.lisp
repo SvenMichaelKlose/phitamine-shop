@@ -1,5 +1,7 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(defvar *gallery-page-size* 12)
+
 (define-template tpl-gallery-index       :path "gallery/tpl/index.lisp")
 (define-template tpl-gallery-empty       :path "gallery/tpl/empty.lisp")
 (define-template tpl-gallery-image       :path "gallery/tpl/image.lisp")
