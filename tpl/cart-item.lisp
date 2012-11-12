@@ -1,5 +1,5 @@
 ,(with (large-index       (cadr (assoc 'large *components*))
-        id                (template-param-value 'id)
+        id                (number (template-param-value 'id))
         item-large-index  (gallery-id-largepage id))
   `(div :class ,(+ "cart_item"
                    (? (== large-index item-large-index)

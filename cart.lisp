@@ -66,10 +66,7 @@
       (+! total (number (assoc-value 'price (find-image `(id . ,i.))))))))
 
 (defun cart-items ()
-  (let count 0
-    (filter [tpl-cart-item (+ `((count . ,(1+! count)))
-                              (find-image `(id . ,_.)))]
-            (cart-current))))
+  (template-list #'tpl-cart-item (filter [find-image `(id . ,_.)] (cart-current))))
 
 (defun cart-num-items ()
   (length (cart-current)))

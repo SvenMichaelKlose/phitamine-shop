@@ -9,18 +9,15 @@
 
 ; XXX doesn't quasiquote properly in backquote with pairs in COMPILE-BACKQUOTE.
 (defun make-image (pagination img)
-  (prog1
-    (funcall (? (logged-in?) ;(== (user-id) (assoc-value 'id_user img)))
-                #'tpl-gallery-image-form
-                #'tpl-gallery-image)
-             (+ `((image-src        . ,(thumbnail-src img))
-                  (link-image-large . ,(action-url :add `(large ,(+ 1 (pagination-offset pagination) *image-index*)))))
-                img))
-    (1+! *image-index*)))
+  (funcall (? (logged-in?) ;(== (user-id) (assoc-value 'id_user img)))
+              #'tpl-gallery-image-form
+              #'tpl-gallery-image)
+           (+ `((image-src        . ,(thumbnail-src img))
+                (link-image-large . ,(action-url :add `(large ,(+ 1 (pagination-offset pagination) (template-param-value 'index))))))
+              img)))
 
 (defun make-images (pagination x)
-  (= *image-index* 0)
-  (filter [make-image pagination _] x))
+  (template-list [make-image pagination _] x))
 
 (defun past-page (x)
   (? (is_numeric x.) .x x))
