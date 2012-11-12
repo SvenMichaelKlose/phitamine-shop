@@ -31,7 +31,7 @@
   `(= (cart-current) (filter [,@body] (cart-current))))
 
 (defun cart-redirect ()
-  (action-redirect))
+  (action-redirect :update 'cart))
 
 (defun cart-undo (x)
   (cart-add-redo)
