@@ -6,6 +6,7 @@
 
 (make-phitamine-project "Shop Hope Stamps"
                         '("db-tables.lisp"
+                          "navigation.lisp"
                           "page.lisp"
                           "redirect-catcher.lisp"
                           "flag.lisp"
