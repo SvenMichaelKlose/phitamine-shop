@@ -1,7 +1,5 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(defvar *navi-status*   nil)
-
 (define-template tpl-navigation-login   :path "tpl/navigation-logged-in.lisp")
 (define-template tpl-navigation-nologin :path "tpl/navigation-not-logged-in.lisp")
 (define-template tpl-navigation-contact :path "tpl/navigation-contact.lisp")
@@ -13,12 +11,6 @@
 
 (defun navi-url (&optional (x nil))
   (action-url (components-w/o-port 'navi) :add x))
-
-(defun navi-status (&key (class nil))
-  (& (| *navi-status* *login-status*)
-     `((p ,@(!? class `(:class ,!))
-         ,(| *navi-status* "")
-         ,(| *login-status* "")))))
 
 (defun tpl-navigation ()
   (funcall (? (logged-in?)

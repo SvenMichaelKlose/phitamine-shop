@@ -16,7 +16,7 @@
 (defun contact (x)
   (?
     (form-complete?) (send-contact-mail)
-    (has-form?)      (= *navi-status* (lang de "Das Formular ist unvollst&auml;ndig."
+    (has-form?)      (= (page-status) (lang de "Das Formular ist unvollst&auml;ndig."
                                             en "Sorry, but the form is incomplete.")))
   (set-port (tpl-navigation-contact))
   .x)

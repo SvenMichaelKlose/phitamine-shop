@@ -9,9 +9,9 @@
     (script :type "text/javascript" :src ,(+ *action-base-url* "/js/jquery.jqzoom-core-pack.js") "")
     ,*js-jqzoom*)
   (body
-    ,@(when (| (navi-status) (logged-in?))
+    ,@(when (| (page-status) (logged-in?))
         `((div :class "status"
-            ,@(navi-status)
+            ,@(page-status)
             ,@(when (logged-in?)
                 `((p ,(lang de "Eingeloggt als Benutzer &quot;"
                             en "Logged in as user &quot;")
