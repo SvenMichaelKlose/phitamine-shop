@@ -10,7 +10,7 @@
 (defun (= page-title) (x)  (= *page-title* (+ "Shop Hope Stamps &#8208 " x)))
 
 (defun page-status ()       *page-status*)
-(defun (= page-status) (x)  (= *page-status* (list x)))
+(defun (= page-status) (x)  (= *page-status* `(,x)))
 
 (defun url (x)
   (+ *base-url* x))

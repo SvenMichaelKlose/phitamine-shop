@@ -17,7 +17,7 @@
 
 (defun gallery-image-selection ()
   (+ (!? *gallery-country*
-         (list (cons 'country ,!)))
+         `((country . ,!)))
      (gallery-image-selection-by-user)))
 
 (defun gallery-large (x)
@@ -33,9 +33,9 @@
         (= *gallery-page* (pagination-page pagination))
         (= *gallery-images* images)
         (= (page-title) (+ (assoc-value 'title img) " (" (assoc-value 'country img) ")"))
-        (tpl-gallery-image-large (+ (list (cons 'image-src  (original-src img))
-                                          (cons 'link-back  (action-url old-components))
-                                          (cons 'pagination pagination))
+        (tpl-gallery-image-large (+ `((image-src  . ,(original-src img))
+                                      (link-back  . ,(action-url old-components))
+                                      (pagination . ,pagination))
                                     img)))))
   2)
 
@@ -45,8 +45,8 @@
     (funcall (? (logged-in?) ;(== (user-id) (assoc-value 'id_user img)))
                 #'tpl-gallery-image-form
                 #'tpl-gallery-image)
-             (+ (list (cons 'image-src (thumbnail-src img))
-                      (cons 'link-image-large (action-url :add (list 'large (+ 1 (pagination-offset pagination) *image-index*)))))
+             (+ `((image-src        . ,(thumbnail-src img))
+                  (link-image-large . ,(action-url :add `(large ,(+ 1 (pagination-offset pagination) *image-index*)))))
                 img))
     (1+! *image-index*)))
 
@@ -69,10 +69,10 @@
         (!? (find-images (gallery-image-selection)
                          :offset (pagination-offset pagination)
                          :limit *gallery-page-size*)
-            (tpl-gallery-index (list (cons 'images  (make-images pagination !))
-                                     (cons 'pagination pagination)))
+            (tpl-gallery-index `((images     . ,(make-images pagination !))
+                                 (pagination . ,pagination)))
             (tpl-gallery-empty))))
-    (values (list x. page) ..x)))
+    (values `(,x. ,page) ..x)))
 
 (define-action large :handler #'gallery-large)
 (define-action gallery)

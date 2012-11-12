@@ -61,8 +61,8 @@
   (cart-redirect))
 
 (defun cart-items ()
-  (filter [tpl-cart-item (+ (list (cons 'count ._))
-                            (find-image (list (cons 'id _.))))]
+  (filter [tpl-cart-item (+ `((count . ,._))
+                            (find-image `(id . _.)))]
           (cart-current)))
 
 (defun cart (x)

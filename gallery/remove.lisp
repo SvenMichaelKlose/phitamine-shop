@@ -5,7 +5,7 @@
 
 (defun remove-image (x)
   (with (id (number .x.)
-         name (assoc-value 'name (find-image (list (cons 'id id)))))
+         name (assoc-value 'name (find-image `(id . ,id))))
     (alet (path-original (user-id) name)
       (& (file_exists !) (unlink !)))
     (alet (path-thumbnail (user-id) name)
