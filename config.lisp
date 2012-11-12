@@ -4,9 +4,6 @@
 (= *db-host* "localhost")
 
 (= *home-components* '("gallery" "1"))
-(= *action-base-url* "/preview/new-shophope")
-(= *request-path-offset* 2)
-
 (= *available-languages* '(en de))
 
 (defvar *contact-to* "pixel@copei.de")

@@ -11,3 +11,6 @@
 
 (defun page-status ()       *page-status*)
 (defun (= page-status) (x)  (= *page-status* (list x)))
+
+(defun url (x)
+  (+ *base-url* x))

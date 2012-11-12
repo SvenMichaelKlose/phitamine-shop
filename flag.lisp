@@ -35,7 +35,7 @@
   (lhtml-options *flags2* selected))
 
 (defun flag-src (name)
-  (+ *action-base-url* "/media/flags/" name ".png"))
+  (+ *base-url* "/media/flags/" name ".png"))
 
 (defun flag-name? (name)
   (member name *flags* :test #'eq))

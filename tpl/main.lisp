@@ -2,11 +2,11 @@
   (head
     (meta :http-equiv "Content-Type" :content "charset=utf-8")
     (title ,(page-title))
-    (link :rel "stylesheet" :type "text/css" :href ,(+ *action-base-url* "/css/reset.css"))
-    (link :rel "stylesheet" :type "text/css" :href ,(+ *action-base-url* "/css/main.css"))
-    (link :rel "stylesheet" :type "text/css" :href ,(+ *action-base-url* "/css/jquery.jqzoom.css"))
-    (script :type "text/javascript" :src ,(+ *action-base-url* "/js/jquery-1.6.js") "")
-    (script :type "text/javascript" :src ,(+ *action-base-url* "/js/jquery.jqzoom-core-pack.js") "")
+    (link :rel "stylesheet" :type "text/css" :href ,(url "/css/reset.css"))
+    (link :rel "stylesheet" :type "text/css" :href ,(url "/css/main.css"))
+    (link :rel "stylesheet" :type "text/css" :href ,(url "/css/jquery.jqzoom.css"))
+    (script :type "text/javascript" :src ,(url "/js/jquery-1.6.js") "")
+    (script :type "text/javascript" :src ,(url "/js/jquery.jqzoom-core-pack.js") "")
     ,*js-jqzoom*)
   (body
     ,@(when (| (page-status) (logged-in?))
