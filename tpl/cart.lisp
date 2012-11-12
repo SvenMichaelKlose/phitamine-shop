@@ -12,5 +12,5 @@
   (label ,(lang de "Ort/PLZ" en "City/ZIP"))(br)(input :type "text" :name "surname")
   (select :name "country" ,@(flag-options "Germany"))
   (label ,(lang de "Fon" en "Phone"))(br)(input :type "text" :name "surname")
-  (input :type "submit" :value ,(lang de "Nachricht abschicken..."
-                                      en "Send message...")))
+  (input :type "submit" :value ,(lang de "Bestellen..."
+                                      en "Order...")))

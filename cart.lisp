@@ -52,7 +52,7 @@
 
 (defun cart-add (x)
   (cart-add-undo)
-  (let id (request 'id)
+  (let id (number (request 'id))
     (!? (cart-item id)
         (filter-cart (? (== _. id)
                         (cons _. (1+ ._))
@@ -73,6 +73,9 @@
 
 (defun cart-num-items ()
   (length (cart-current)))
+
+(defun cart-item-count (id)
+  (assoc-value id (cart-current) :test #'==))
 
 (defun cart (x)
   (set-port

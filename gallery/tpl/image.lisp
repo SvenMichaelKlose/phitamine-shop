@@ -7,8 +7,6 @@
            :alt ,@(template-param 'title))
       (figcaption
         (p ,@(template-param 'title))
-        (label "(" ,(template-param-value 'country) ")")))
-    "&euro;" ,(template-param-value 'price)
-    (a :href ,(action-url :add (list 'cart-add (template-param-value 'id)))
-      ,(lang de "Kaufen..."
-             en "Buy..."))))
+        (label "(" ,(template-param-value 'country) ")"))))
+  "&euro;" ,(template-param-value 'price)
+  ,(tpl-gallery-buy))

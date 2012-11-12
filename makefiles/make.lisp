@@ -10,6 +10,7 @@
                           "page.lisp"
                           "redirect-catcher.lisp"
                           "flag.lisp"
+                          "gallery/tpl/buy.lisp"
                           "gallery/path.lisp"
                           "gallery/image.lisp"
                           "gallery/upload.lisp"

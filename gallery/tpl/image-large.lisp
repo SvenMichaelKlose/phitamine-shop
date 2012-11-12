@@ -12,6 +12,4 @@
   (a :href ,(template-param-value 'image-src) :class "jqzoomlink" :title ,(template-param-value 'title)
     (img :class "original" :src ,(template-param-value 'image-src)))
   (p "&euro;" ,(template-param-value 'price))
-  (a :href ,(action-url :add (list 'cart-add (template-param-value 'id)))
-    ,(lang de "Kaufen..."
-           en "Buy...")))
+  ,(tpl-gallery-buy))

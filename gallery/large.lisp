@@ -5,7 +5,7 @@
 (defun gallery-large (x)
   (let old-components (copy-tree *components*)
     (set-port
-      (with (images (find-images (gallery-image-selection))
+      (with (images (gallery-find-images)
              page (number .x.)
              pagination (make-pagination :page page
                                          :size 1
