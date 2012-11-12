@@ -37,7 +37,7 @@
                                           (cons 'link-back  (action-url old-components))
                                           (cons 'pagination pagination))
                                     img)))))
-  (values (list x. .x.) ..x))
+  2)
 
 ; XXX doesn't quasiquote properly in backquote with pairs in COMPILE-BACKQUOTE.
 (defun make-image (pagination img)

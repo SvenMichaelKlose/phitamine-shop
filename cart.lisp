@@ -70,7 +70,7 @@
     (? (has-cart?)
        (tpl-cart))
        (tpl-cart-empty))
-  t)
+  1)
 
 (defmacro define-cart-action (name)
   `(define-action ,name :group cart))

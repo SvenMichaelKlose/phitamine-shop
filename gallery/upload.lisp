@@ -34,7 +34,7 @@
   (!? (form-files 'image)
       (create-images !))
   (set-port (tpl-navigation-upload))
-  t)
+  1)
 
 (define-action upload-images :group gallery-upload)
 
