@@ -6,9 +6,9 @@
                       " viewed"
                       ""))
      (p ,(template-param-value 'title))
-     (a :href ,(action-url :update `((gallery ,(integer (1+ (/ item-large-index *gallery-page-size*))))
-                                     (large ,item-large-index)
-                                     (cart)))
+     (a :href ,(action-url `((gallery ,(integer (1+ (/ item-large-index *gallery-page-size*))))
+                             (large ,item-large-index)
+                             (cart)))
        (img :src ,(thumbnail-src (find-image `(id . ,id)))))
      "&euro;" (label ,(template-param-value 'price))
      (a :href ,(action-url :add `(cart-remove ,id))
