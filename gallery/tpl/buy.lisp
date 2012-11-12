@@ -4,10 +4,8 @@
   (let id (template-param-value 'id)
     (? (cart-item-count id)
        `(a :href ,(action-url :add (list 'cart-remove id))
-           (button
-             ,(lang de "Aus Warenkorb entfernen..."
-                    en "Remove from cart...")))
+          ,(lang de "Aus Warenkorb entfernen..."
+                 en "Remove from cart..."))
        `(a :href ,(action-url :add (list 'cart-add id))
-           (button
-             ,(lang de "Kaufen..."
-                    en "Buy..."))))))
+           ,(lang de "Kaufen..."
+                  en "Buy...")))))
