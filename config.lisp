@@ -1,6 +1,6 @@
-;(= *db-user* "")
-;(= *db-password* "")
-;(= *db-name* "")
+(= *db-user* "pixel")
+(= *db-password* "0wBzEXrw28SL1HHa")
+(= *db-name* "pixel")
 (= *db-host* "localhost")
 
 (= *home-components* '("gallery" "1"))
