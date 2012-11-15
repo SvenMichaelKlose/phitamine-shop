@@ -1,5 +1,7 @@
 ;;;;; Centralservices – Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
+(define-template tpl-login :path "tpl/navigation-login.lisp")
+
 (define-redirect-catcher (logoutdone :status (lang de "Sie sind ausgeloggt."
                                                    en "You are logged out.")))
 (set-action-group 'logoutdone 'login)
