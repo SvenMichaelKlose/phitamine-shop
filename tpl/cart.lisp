@@ -2,7 +2,7 @@
            en "Cart"))
 (a :class "cancel" :href ,(navi-url) ,(lang de "zur&uuml;ck" en "back"))
 ,(tpl-cart-history)
-,@(cart-items)
+,(cart-items)
 (p "Total: &euro;" ,(cart-price-total))
 (form :action "" :method "post"
   (h1 ,(lang de "Bestellung" en "Order"))
