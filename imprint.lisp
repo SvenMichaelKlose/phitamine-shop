@@ -6,6 +6,6 @@
   (set-port
     (= (page-title) (lang de "Impressum" en "Imprint"))
     (tpl-imprint))
-  nil)
+  1)
 
 (define-action imprint)
