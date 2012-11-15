@@ -2,7 +2,7 @@
 ,@(tpl-gallery-browser)
 ,@(? (logged-in?)
      `((form :class "imageform"
-             :action ,(action-url :add 'update-images)
+             :action ,(action-url :add 'gallery-update-images)
              :method "post"
          (input :class "imagesubmit" :type "submit" :value ,(lang de "Aktualisieren..."
                                                                   en "Update..."))
