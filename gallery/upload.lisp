@@ -26,7 +26,7 @@
                     (title    . "")
                     (type     . ,mime-type)
                     (f_public . "0")
-                    (t_create . ,(date "Y-m-d H:i:s"))))))
+                    (t_create . ,(sql-date))))))
 
 (defun create-images (files)
   (create-image-paths (user-id))
