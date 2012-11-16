@@ -13,7 +13,7 @@
               #'tpl-gallery-image-form
               #'tpl-gallery-image)
            (+ `((image-src        . ,(thumbnail-src img))
-                (link-image-large . ,(action-url :add `(large ,(+ 1 (pagination-offset pagination) (template-param-value 'index))))))
+                (link-image-large . ,(action-url :add `(large ,(+ (pagination-offset pagination) (template-param-value 'index))))))
               img)))
 
 (defun make-images (pagination x)
