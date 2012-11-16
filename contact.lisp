@@ -21,7 +21,7 @@
     (has-form?)      (= (page-status) (lang de "Das Formular ist unvollst&auml;ndig."
                                             en "Sorry, but the form is incomplete.")))
   (set-port (tpl-navigation-contact))
-  .x)
+  1)
 
 (define-action contact :group contact)
 
