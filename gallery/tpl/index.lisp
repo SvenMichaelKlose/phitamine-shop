@@ -6,5 +6,5 @@
              :method "post"
          (input :class "imagesubmit" :type "submit" :value ,(lang de "Aktualisieren..."
                                                                   en "Update..."))
-         ,@(template-param 'images)))
-     (template-param 'images))
+         ,(param 'images)))
+     (list (param 'images)))

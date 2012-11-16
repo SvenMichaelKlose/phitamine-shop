@@ -1,12 +1,12 @@
 (div :class "image"
-  (img :src ,(flag-src (template-param-value 'country))
-       :alt ,(template-param-value 'country))
-  (a :href ,@(template-param 'link-image-large)
+  (img :src ,(flag-src (param 'country))
+       :alt ,(param 'country))
+  (a :href ,(param 'link-image-large)
     (figure
-      (img :src ,@(template-param 'image-src)
-           :alt ,@(template-param 'title))
+      (img :src ,(param 'image-src)
+           :alt ,(param 'title))
       (figcaption
-        (p ,@(template-param 'title))
-        (label "(" ,(template-param-value 'country) ")"))))
-  "&euro;" ,(template-param-value 'price)
+        (p ,(param 'title))
+        (label "(" ,(param 'country) ")"))))
+  "&euro;" ,(param 'price)
   ,(tpl-gallery-buy))
