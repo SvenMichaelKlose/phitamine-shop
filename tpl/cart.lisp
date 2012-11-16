@@ -1,6 +1,7 @@
 (h1 ,(lang de "Warenkorb"
            en "Cart"))
-(a :class "cancel" :href ,(navi-url) ,(lang de "zur&uuml;ck" en "back"))
+(a :class "cancel" :href ,(action-url :remove 'cart)
+  ,(lang de "zur&uuml;ck" en "back"))
 ,(tpl-cart-history)
 ,(cart-items)
 (p "Total: &euro;" ,(cart-price-total))
