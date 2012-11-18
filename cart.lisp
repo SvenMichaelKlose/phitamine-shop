@@ -1,9 +1,9 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(define-template tpl-cart         :path "tpl/cart.lisp")
-(define-template tpl-cart-empty   :path "tpl/cart-empty.lisp")
-(define-template tpl-cart-item    :path "tpl/cart-item.lisp")
-(define-template tpl-cart-history :path "tpl/cart-history.lisp")
+(define-template tpl-cart         :path "templates/cart.lisp")
+(define-template tpl-cart-empty   :path "templates/cart-empty.lisp")
+(define-template tpl-cart-item    :path "templates/cart-item.lisp")
+(define-template tpl-cart-history :path "templates/cart-history.lisp")
 
 (defun cart-current ()      (!?   (session 'cart)      (hash-assoc !)))
 (defun cart-undos ()        (!?   (session 'cart-undo) (array-list !)))

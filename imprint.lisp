@@ -1,6 +1,6 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(define-template tpl-imprint :path "tpl/imprint.lisp")
+(define-template tpl-imprint :path "templates/imprint.lisp")
 
 (defun imprint (x)
   (set-port

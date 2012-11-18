@@ -1,9 +1,9 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(define-template tpl-navigation-login   :path "tpl/navigation-logged-in.lisp")
-(define-template tpl-navigation-nologin :path "tpl/navigation-not-logged-in.lisp")
-(define-template tpl-navigation-contact :path "tpl/navigation-contact.lisp")
-(define-template tpl-navigation-upload  :path "tpl/navigation-upload.lisp")
+(define-template tpl-navigation-login   :path "templates/navigation-logged-in.lisp")
+(define-template tpl-navigation-nologin :path "templates/navigation-not-logged-in.lisp")
+(define-template tpl-navigation-contact :path "templates/navigation-contact.lisp")
+(define-template tpl-navigation-upload  :path "templates/navigation-upload.lisp")
 
 (defvar *navi-groups* '(login contact gallery-upload cart))
 (dolist (i *navi-groups*)

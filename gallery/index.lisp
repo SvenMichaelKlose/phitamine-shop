@@ -2,10 +2,10 @@
 
 (defvar *gallery-page-size* 12)
 
-(define-template tpl-gallery-index       :path "gallery/tpl/index.lisp")
-(define-template tpl-gallery-empty       :path "gallery/tpl/empty.lisp")
-(define-template tpl-gallery-image       :path "gallery/tpl/image.lisp")
-(define-template tpl-gallery-image-form  :path "gallery/tpl/image-form.lisp")
+(define-template tpl-gallery-index       :path "gallery/templates/index.lisp")
+(define-template tpl-gallery-empty       :path "gallery/templates/empty.lisp")
+(define-template tpl-gallery-image       :path "gallery/templates/image.lisp")
+(define-template tpl-gallery-image-form  :path "gallery/templates/image-form.lisp")
 
 ; XXX doesn't quasiquote properly in backquote with pairs in COMPILE-BACKQUOTE.
 (defun make-image (pagination img)

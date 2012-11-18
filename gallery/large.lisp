@@ -1,6 +1,6 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
-(define-template tpl-gallery-image-large :path "gallery/tpl/image-large.lisp")
+(define-template tpl-gallery-image-large :path "gallery/templates/image-large.lisp")
 
 (defun gallery-large (x)
   (set-port
