@@ -9,5 +9,5 @@
             :method "post"
             :enctype "multipart/form-data"
             :class "css_upload"
-        (input :type "file" :name "css[]" :size "10")(br)
+        (input :type "file" :name "css[]")(br)
         (input :type "submit" :value "Upload CSS..."))))
