@@ -4,8 +4,6 @@
   (let id (param 'id)
     (? (cart-item-count id)
        `(a :href ,(action-url :add (list 'cart-remove id))
-          ,(lang de "Aus Warenkorb entfernen..."
-                 en "Remove from cart..."))
+          (span :class "cartbutton remove " (img :src ,(+ *base-url* "/media/korb.png"))))
        `(a :href ,(action-url :add (list 'cart-add id))
-           ,(lang de "Kaufen..."
-                  en "Buy...")))))
+          (span :class "cartbutton add" (img :src ,(+ *base-url* "/media/korb.png")))))))
