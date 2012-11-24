@@ -5,6 +5,7 @@
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/reset.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/main.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/jquery.jqzoom.css"))
+    (script :type "text/javascript" :src ,(url "/js/less.js") "")
     (script :type "text/javascript" :src ,(url "/js/jquery-1.6.js") "")
     (script :type "text/javascript" :src ,(url "/js/jquery.jqzoom-core-pack.js") "")
     ,*js-jqzoom*)
