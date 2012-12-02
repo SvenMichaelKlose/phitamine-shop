@@ -4,10 +4,11 @@
 (a :href ,(param 'link-imprint) ,(lang de "Impressum" en "Imprint"))
 (a :href ,(param 'link-logout)  ,(lang de "Logout" en "Logout"))
 ,(tpl-gallery-country-selection)
-,@(when (string== "pixel" (user-alias))
-    `((form :action ,(action-url :add 'css-upload)
-            :method "post"
-            :enctype "multipart/form-data"
-            :class "css_upload"
-        (input :type "file" :name "css[]")(br)
-        (input :type "submit" :value "Upload CSS..."))))
+,@(& *have-css-upload?*
+     (string== "pixel" (user-alias))
+     `((form :action ,(action-url :add 'css-upload)
+             :method "post"
+             :enctype "multipart/form-data"
+             :class "css_upload"
+         (input :type "file" :name "css[]")(br)
+         (input :type "submit" :value "Upload CSS..."))))

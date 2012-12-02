@@ -1,9 +1,11 @@
 ;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
 
 (load "phitamine/make-project.lisp")
+(load "config-compile-time.lisp")
 
 (make-phitamine-project "Shop Hope Stamps"
-                        '("centralservices/pagination.lisp"
+                        `("config-compile-time.lisp"
+                          "centralservices/pagination.lisp"
                           "centralservices/user-management/login.lisp"
                           "db-tables.lisp"
                           "navigation.lisp"
@@ -25,6 +27,7 @@
                           "contact.lisp"
                           "imprint.lisp"
                           "cart.lisp"
-                          "css-upload.lisp"
+                          ,@(& *have-css-upload?*
+                               '("css-upload.lisp"))
                           "toplevel.lisp"))
 (quit)
