@@ -5,7 +5,7 @@
 (define-template tpl-cart-item    :path "templates/cart-item.lisp")
 (define-template tpl-cart-history :path "templates/cart-history.lisp")
 
-(defun cart-current ()      (!?   (session 'cart)      (hash-assoc !)))
+(defun cart-current ()      (!?   (session 'cart)      (hash-alist !)))
 (defun cart-undos ()        (!?   (session 'cart-undo) (array-list !)))
 (defun cart-redos ()        (!?   (session 'cart-redo) (array-list !)))
 (defun (= cart-current) (x) (=    (session 'cart)      (assoc-phphash x)))
