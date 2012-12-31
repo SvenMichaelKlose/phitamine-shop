@@ -8,7 +8,7 @@
 (defun cart-current ()      (!?   (session 'cart)      (hash-alist !)))
 (defun cart-undos ()        (!?   (session 'cart-undo) (array-list !)))
 (defun cart-redos ()        (!?   (session 'cart-redo) (array-list !)))
-(defun (= cart-current) (x) (=    (session 'cart)      (assoc-phphash x)))
+(defun (= cart-current) (x) (=    (session 'cart)      (alist-phphash x)))
 (defun (= cart-undos) (x)   (=    (session 'cart-undo) (list-phphash x)))
 (defun (= cart-redos) (x)   (=    (session 'cart-redo) (list-phphash x)))
 (defun cart-add-undo ()     (push (session 'cart)      (cart-undos)))
