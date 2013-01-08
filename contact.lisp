@@ -1,7 +1,7 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
 
-(defvar *contact-to* nil)
-(defvar *contact-subject* nil)
+(defvar *contact-to*)
+(defvar *contact-subject*)
 
 (defun contact-mail-header ()
   (alet (assoc-value 'email (form-data))

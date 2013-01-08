@@ -1,7 +1,7 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
 
-(defvar *thumbnail-width* nil)
-(defvar *thumbnail-height* nil)
+(defvar *thumbnail-width*)
+(defvar *thumbnail-height*)
 
 (defun create-thumbnail (name)
   (alet (new *Imagick (path-original (user-id) name))

@@ -1,6 +1,6 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
 
-(defvar *gallery-archive-path* nil)
+(defvar *gallery-archive-path*)
 
 (defun image-path (section user-id)
   (string-concat (href *_SERVER* "DOCUMENT_ROOT") *gallery-archive-path* "/" user-id "/" section))
