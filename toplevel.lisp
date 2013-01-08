@@ -3,4 +3,5 @@
 (include "config.php")
 
 (phitamine)
+(princ ,(format nil "<!DOCTYPE HTML>~%"))
 (princ (tpl-main))
