@@ -1,3 +1,3 @@
 #!/bin/sh
 
-time tre make.lisp && php compiled/index.php
+time tre makefiles/make.lisp && php compiled/index.php

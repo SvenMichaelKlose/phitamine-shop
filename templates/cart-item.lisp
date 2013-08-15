@@ -6,7 +6,7 @@
                       " viewed"
                       ""))
      (p ,(param 'title))
-     (a :href ,(action-url :update `((gallery ,(integer (1+ (/ item-large-index *gallery-page-size*))))
+     (a :href ,(action-url :update `((gallery ,(integer (++ (/ item-large-index *gallery-page-size*))))
                                      (large ,item-large-index)))
        (img :src ,(thumbnail-src (find-image `(id . ,id)))))
      "&euro;" (label ,(param 'price))

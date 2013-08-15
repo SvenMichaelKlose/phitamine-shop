@@ -1,7 +1,7 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
 
-(defun tpl-gallery-title-page ()
-  (+ "(" (lang de "Seite" en "page") " " *gallery-page* ")"))
+(def-pagination tpl-gallery-title-page (pagination)
+  (+ "(" (lang de "Seite" en "page") " " page ")"))
 
 (defun tpl-gallery-title ()
   (!? *gallery-country*

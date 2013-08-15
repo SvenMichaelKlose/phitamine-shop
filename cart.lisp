@@ -55,7 +55,7 @@
   (let id (number (request 'id))
     (!? (cart-item id)
         (filter-cart (? (== _. id)
-                        (cons _. (1+ ._))
+                        (cons _. (++ ._))
                         _))
         (acons! .x. 1 (cart-current))))
   (cart-redirect))
