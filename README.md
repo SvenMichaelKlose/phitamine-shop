@@ -2,10 +2,10 @@
 
 # Overview
 
-This is an example web shop for precious stamps created with
-phitamine and centralservices.  It pitches a nifty URL schema
-for multiple ports, a cart with undo and a CSS upload form
-for your favourite design artists.
+This is an web shop for precious stamps created with
+phitamine and centralservices.  It pitches phitamine's nifty
+URL schema for multiple ports, a cart with undo and a CSS
+upload form for your favourite design artists.
 
 # Installing
 
