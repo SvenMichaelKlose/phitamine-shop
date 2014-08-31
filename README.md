@@ -2,10 +2,14 @@
 
 # Overview
 
-This is an web shop for precious stamps created with
+This is a web shop for precious stamps created with
 phitamine and centralservices.  It pitches phitamine's nifty
 URL schema for multiple ports, a cart with undo and a CSS
 upload form for your favourite design artists.
+
+Check out the example installation at:
+
+http://hugbox.org/pixel/software/phitamine-shop/
 
 # Installing
 
