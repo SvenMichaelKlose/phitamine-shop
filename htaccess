@@ -1,9 +1,0 @@
-# Rename this file to .htaccess before uploading it to the web server.
-
-Options -indexes
-
-RewriteEngine on
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .? /yourdirectory/index.php$1 [L]
