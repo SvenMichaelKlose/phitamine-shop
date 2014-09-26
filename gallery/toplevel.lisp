@@ -1,6 +1,5 @@
 ;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
 
-(defvar *gallery-images* nil)
 (defvar *image-index* nil)
 
 (defun gallery-image-selection-by-user ()
@@ -17,5 +16,4 @@
 
 (defun gallery-id-largepage (id)
   (++ (position-if [== id (number (assoc-value 'id _))]
-                   (| *gallery-images*
-                      (gallery-find-images)))))
+                   (gallery-find-images))))
