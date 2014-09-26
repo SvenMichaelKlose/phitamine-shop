@@ -1,4 +1,5 @@
 <?
+date_default_timezone_set ("Europe/Berlin");
 $DBUSER = '';
 $DBPASSWORD = '';
 $DBNAME = '';
