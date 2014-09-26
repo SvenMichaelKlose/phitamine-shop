@@ -20,6 +20,7 @@
              "gallery/upload.lisp"
              "gallery/update.lisp"
              "gallery/remove.lisp"
+             "gallery/country.lisp"
              "gallery/browser.lisp"
              "gallery/title.lisp"
              "gallery/large.lisp"
