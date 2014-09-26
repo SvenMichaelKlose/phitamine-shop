@@ -82,12 +82,12 @@
 (defun cart-update ()
   (when (has-form?)
     (cart-add-undo)
-    (fiter #'cart-update-item (form-alists))
+    (filter #'cart-update-item (form-alists))
     (action-redirect)))
 
 (defun cart (x)
   (set-port
-    (cart-update)
+;    (cart-update)
     (? (has-cart?)
        (tpl-cart)
        (tpl-cart-empty)))
