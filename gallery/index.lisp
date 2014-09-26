@@ -3,7 +3,6 @@
 (defvar *gallery-page-size* 12)
 
 (define-template tpl-gallery-index       :path "gallery/templates/index.lisp")
-(define-template tpl-gallery-empty       :path "gallery/templates/empty.lisp")
 (define-template tpl-gallery-image       :path "gallery/templates/image.lisp")
 (define-template tpl-gallery-image-form  :path "gallery/templates/image-form.lisp")
 
@@ -36,11 +35,9 @@
                                 en "Various countries")
                           (pagination-title pagination))))
     (set-port
-      (? images
-         (tpl-gallery-index `((pagination . ,pagination)
-                              (images     . ,images)
-                              (lml-images . ,(lml-images pagination images))))
-         (tpl-gallery-empty)))
+      (tpl-gallery-index `((pagination . ,pagination)
+                           (images     . ,images)
+                           (lml-images . ,(lml-images pagination images)))))
     (values `(,x. ,page) ..x)))
 
 (define-action gallery)
