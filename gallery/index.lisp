@@ -23,7 +23,8 @@
          pagination (make-pagination :page  page
                                      :size  *gallery-page-size*
                                      :total (get-image-count (gallery-image-selection)))
-         images     (gallery-find-images :offset (pagination-offset pagination)))
+         images     (gallery-find-images :limit *gallery-page-size*
+                                         :offset (pagination-offset pagination)))
     (= (page-title) (| *gallery-country*
                        (+ (lang de "Verschiedene L&auml;nder"
                                 en "Various countries")
