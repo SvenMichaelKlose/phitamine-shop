@@ -18,13 +18,19 @@
 (defun lml-images (pagination x)
   (template-list [make-image pagination _] x))
 
+(defun gallery-pagination (page)
+  (make-pagination :page  page
+                   :size  *gallery-page-size*
+                   :total (get-image-count (gallery-image-selection))))
+
+(defun paginated-images (pagination)
+  (gallery-find-images :limit *gallery-page-size*
+                       :offset (pagination-offset pagination)))
+
 (defun gallery (x)
-  (with (page       (number (| .x. 1))
-         pagination (make-pagination :page  page
-                                     :size  *gallery-page-size*
-                                     :total (get-image-count (gallery-image-selection)))
-         images     (gallery-find-images :limit *gallery-page-size*
-                                         :offset (pagination-offset pagination)))
+  (with (page        (number (| .x. 1))
+         pagination  (gallery-pagination page)
+         images      (paginated-images pagination))
     (= (page-title) (| *gallery-country*
                        (+ (lang de "Verschiedene L&auml;nder"
                                 en "Various countries")
