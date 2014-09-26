@@ -1,7 +1,9 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012,2014 Sven Michael Klose <pixel@copei.de>
 
 (load "phitamine/make-project.lisp")
 (load "config-compile-time.lisp")
+
+(= (transpiler-assert? *php-transpiler*) t)
 
 (make-phitamine-project "Shop Hope Stamps"
     :files `("config-compile-time.lisp"
