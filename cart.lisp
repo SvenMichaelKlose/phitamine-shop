@@ -74,8 +74,20 @@
 (defun cart-item-count (id)
   (assoc-value id (cart-current) :test #'==))
 
+(defun cart-update-item (x)
+  (filter-cart (? (string== _. (assoc-value 'id x :test #'string==))
+                  (. _. (assoc-value 'n x :test #'string==))
+                  _)))
+
+(defun cart-update ()
+  (when (has-form?)
+    (cart-add-undo)
+    (fiter #'cart-update-item (form-alists))
+    (action-redirect)))
+
 (defun cart (x)
   (set-port
+    (cart-update)
     (? (has-cart?)
        (tpl-cart)
        (tpl-cart-empty)))
@@ -89,16 +101,3 @@
 (define-cart-action cart-remove)
 (define-cart-action cart-undo)
 (define-cart-action cart-redo)
-
-;(defun cart-update-item (x)
-;  (filter-cart (? (string== _. (assoc-value 'id x :test #'string==))
-;                  (cons _. (assoc-value 'n x :test #'string==))
-;                  _)))
-
-;(defun cart-update ()
-;  (when (has-form?)
-;    (cart-add-undo)
-;    (fiter #'cart-update-item (form-alists)))
-;  (action-redirect :add 'cart))
-
-;(define-navi-action cart-update)
