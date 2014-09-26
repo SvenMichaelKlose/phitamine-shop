@@ -1,4 +1,5 @@
-(h1 ,(tpl-gallery-title) (br) ,(tpl-gallery-title-page (param 'pagination)))
+(h1 ,(tpl-gallery-title)(br)
+    ,(tpl-gallery-title-page (param 'pagination)))
 ,@(tpl-gallery-browser (param 'pagination) (param 'images))
 ,@(? (logged-in?)
      `((form :class  "imageform"

@@ -15,7 +15,7 @@
                 (link-image-large . ,(action-url :add `(large ,(+ (pagination-offset pagination) (param 'index))))))
               img)))
 
-(defun make-images (pagination x)
+(defun lml-images (pagination x)
   (template-list [make-image pagination _] x))
 
 (defun gallery (x)
@@ -33,7 +33,7 @@
       (? images
          (tpl-gallery-index `((pagination . ,pagination)
                               (images     . ,images)
-                              (lml-images . ,(make-images pagination images))))
+                              (lml-images . ,(lml-images pagination images))))
          (tpl-gallery-empty)))
     (values `(,x. ,page) ..x)))
 
