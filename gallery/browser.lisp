@@ -1,5 +1,18 @@
 ;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
+(defun browser-item-maker (images typ idx)
+  (? (assoc 'large *components*)
+     `(,(? (eq 'page typ)
+           idx
+           "")
+       (img :src ,(thumbnail-src (elt images (-- idx)))))
+     (list (? (eq 'page typ)
+              idx
+              ""))))
+
+(defun displaying-large-image? ()
+  (assoc 'large *components*))
+
 (def-pagination tpl-gallery-browser (pagination images)
   (. `(div :class "position"
         ,@(when tpl-range?
@@ -12,16 +25,9 @@
                      total))))
      (paginate pagination
                :component-maker
-                 [? (assoc 'large *components*)
+                 [? (displaying-large-image?)
                     (action-url :update `(large ,_))
                     (action-url :update `(gallery ,_))]
                :item-maker
                  #'((typ idx)
-                     (? (assoc 'large *components*)
-                        `(,(? (eq 'page typ)
-                              idx
-                              "")
-                           (img :src ,(thumbnail-src (elt images (-- idx)))))
-                        (list (? (eq 'page typ)
-                                 idx
-                                 "")))))))
+                      (browser-item-maker images typ idx)))))
