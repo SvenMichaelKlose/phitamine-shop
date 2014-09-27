@@ -17,7 +17,7 @@
                     (action-url :update `(gallery ,_))]
                :item-maker
                  #'((typ idx)
-                     (? images
+                     (? (assoc 'large *components*)
                         `(,(? (eq 'page typ)
                               idx
                               "")
