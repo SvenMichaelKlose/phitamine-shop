@@ -9,6 +9,7 @@
     :files `("config-compile-time.lisp"
              "centralservices/pagination.lisp"
              "centralservices/user-management/login.lisp"
+             "centralservices/cart.lisp"
              "db-tables.lisp"
              "navigation.lisp"
              "page.lisp"
