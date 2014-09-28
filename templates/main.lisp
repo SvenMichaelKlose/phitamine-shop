@@ -1,3 +1,4 @@
+,(format nil "<!doctype html>~%")
 (html
   (head
     (meta :http-equiv "Content-Type" :content "charset=utf-8")
