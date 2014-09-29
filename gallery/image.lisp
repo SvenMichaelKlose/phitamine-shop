@@ -1,7 +1,5 @@
 ;;;;; Copyright (c) 2012,2014 Sven Michael Klose <pixel@copei.de>
 
-(dont-obfuscate strtotime)
-
 (defun image-src (img section)
   (action-url `(,section ,(@ img 'id) ,(@ img 'name))))
 

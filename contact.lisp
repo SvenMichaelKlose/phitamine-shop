@@ -9,7 +9,6 @@
        "Reply-To: " ! *terpri*)))
 
 (defun send-contact-mail ()
-  (dont-obfuscate mail)
   (mail *contact-to* *contact-subject*
         (@ (form-data) 'text)
         (contact-mail-header))
