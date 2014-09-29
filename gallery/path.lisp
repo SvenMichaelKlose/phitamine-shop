@@ -3,7 +3,7 @@
 (defvar *gallery-archive-path*)
 
 (defun image-path (section user-id)
-  (string-concat (aref *_SERVER* "DOCUMENT_ROOT") *gallery-archive-path* "/" (| user-id 1) "/" section))
+  (string-concat (@ *_SERVER* "DOCUMENT_ROOT") *gallery-archive-path* "/" (| user-id 1) "/" section))
 
 (defun image-path-originals (user-id)
   (image-path "original" user-id))

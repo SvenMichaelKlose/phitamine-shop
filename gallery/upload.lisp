@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
 (defvar *thumbnail-width*)
 (defvar *thumbnail-height*)
@@ -13,9 +13,9 @@
     (file_put_contents ! (file_get_contents tmp-name))))
 
 (defun create-image (x)
-  (with (name (assoc-value 'name x)
-         tmp-name (assoc-value 'tmp-name x)
-         mime-type (assoc-value 'type x))
+  (with (name       (@ x 'name)
+         tmp-name   (@ x 'tmp-name)
+         mime-type  (@ x 'type))
     (while (file_exists (path-original (user-id) name))
            nil
       (= name (+ "_" name)))

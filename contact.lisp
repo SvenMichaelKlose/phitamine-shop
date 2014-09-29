@@ -1,17 +1,17 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
 (defvar *contact-to*)
 (defvar *contact-subject*)
 
 (defun contact-mail-header ()
-  (alet (assoc-value 'email (form-data))
+  (alet (@ (form-data) 'email)
     (+ "From: " ! *terpri*
        "Reply-To: " ! *terpri*)))
 
 (defun send-contact-mail ()
   (dont-obfuscate mail)
   (mail *contact-to* *contact-subject*
-        (assoc-value 'text (form-data))
+        (@ (form-data) 'text)
         (contact-mail-header))
   (action-redirect :add 'contactdone))
 

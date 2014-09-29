@@ -7,7 +7,7 @@
 (define-template tpl-gallery-image-form  :path "gallery/templates/image-form.lisp")
 
 (defun make-image (pagination img)
-  (funcall (? (logged-in?) ;(== (user-id) (assoc-value 'id_user img)))
+  (funcall (? (logged-in?) ;(== (user-id) (@ img 'id_user)))
               #'tpl-gallery-image-form
               #'tpl-gallery-image)
            (+ `((image-src        . ,(thumbnail-src img))

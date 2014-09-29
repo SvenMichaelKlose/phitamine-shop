@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012,2014 Sven Michael Klose <pixel@copei.de>
 
 (define-redirect-catcher (cssdone :status "Oh, gro&szlig;er Meister, Dein neues CSS wurde &uuml;bernommen."))
 
@@ -7,7 +7,7 @@
 
 (defun css-upload (x)
   (awhen (form-files "css")
-    (file_put_contents (css-path) (file_get_contents (assoc-value 'tmp-name !.))))
+    (file_put_contents (css-path) (file_get_contents (@ !. 'tmp-name))))
   (action-redirect :add 'cssdone))
 
 (define-action css-upload)

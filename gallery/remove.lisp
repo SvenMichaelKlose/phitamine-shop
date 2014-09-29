@@ -9,10 +9,10 @@
 
 (defun remove-image (x)
   (with (id    (number .x.)
-         name  (assoc-value 'name (find-image `(id . ,id))))
+         name  (@ (find-image `(id . ,id)) 'name))
     (unlink-if-exists (path-original (user-id) name))
     (unlink-if-exists (path-thumbnail (user-id) name))
-    (delete-images (list (cons 'id id)))
+    (delete-images (list (. 'id id)))
     (action-redirect :remove 'remove-image :add 'image-removed)))
 
 (define-action remove-image  :group gallery)
