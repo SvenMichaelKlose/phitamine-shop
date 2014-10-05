@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
 (defvar *page-title*)
 (defvar *page-status* nil)
@@ -11,13 +11,15 @@
 (defun (= page-title) (x)  (= *page-title* (+ "Shop Hope Stamps" (? x (+ " &#8208; " x) ""))))
 (= (page-title) nil)
 
-(def-pagination pagination-title (pagination)
-  (+ " &#8208; "
-     (lang de "Seite "
-           en "Page ")
-     page
-     (lang de " von " en " of ")
-     (pagination-pages pagination)))
+(defun pagination-title (pagination)
+  (with (from  (pagination-from pagination)
+         to    (pagination-to pagination))
+    (+ (? (== to from)
+          (pagination-page pagination)
+          (+ from "&#8208;" to))
+       (lang en " of "
+             de " von ")
+       (pagination-total pagination))))
 
 (defun page-status ()       *page-status*)
 (defun (= page-status) (x)  (= *page-status* `(,x)))

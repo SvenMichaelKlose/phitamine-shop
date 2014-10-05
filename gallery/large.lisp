@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
 (define-template tpl-gallery-image-large :path "gallery/templates/image-large.lisp")
 
@@ -9,7 +9,7 @@
                                      :size  1
                                      :total (length images))
          img        (elt images (-- page)))
-    (= (page-title) (+ (assoc-value 'title img) " (" (assoc-value 'country img) ")" (pagination-title pagination)))
+    (= (page-title) (+ (assoc-value 'title img) " (" (assoc-value 'country img) ") " (pagination-title pagination)))
     (set-port
       (tpl-gallery-image-large (+ `((pagination . ,pagination)
                                     (images     . ,images)

@@ -14,20 +14,14 @@
   (assoc 'large *components*))
 
 (def-pagination tpl-gallery-browser (pagination images)
-  (. `(div :class "position"
-        ,@(when tpl-range?
-            (list (+ (with (from  (pagination-from pagination)
-                            to    (pagination-to pagination))
-                       (? (== from to)
-                          from
-                          (+ from "&#8208; " to)))
-                     (lang de " von " en " of ")
-                     total))))
-     (paginate pagination
-               :component-maker
-                 [? (displaying-large-image?)
-                    (action-url :update `(large ,_))
-                    (action-url :update `(gallery ,_))]
-               :item-maker
-                 #'((typ idx)
-                      (browser-item-maker images typ idx)))))
+  `((div :class "position"
+      ,@(when tpl-range?
+          (list (pagination-title pagination))))
+    ,@(paginate pagination
+                :component-maker
+                  [? (displaying-large-image?)
+                     (action-url :update `(large ,_))
+                     (action-url :update `(gallery ,_))]
+                :item-maker
+                  #'((typ idx)
+                       (browser-item-maker images typ idx)))))

@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
 
 (defvar *gallery-page-size* 12)
 
@@ -30,10 +30,11 @@
   (with (page        (number (| .x. 1))
          pagination  (gallery-pagination page)
          images      (paginated-images pagination))
-    (= (page-title) (| *gallery-country*
-                       (+ (lang de "Verschiedene L&auml;nder"
-                                en "Various countries")
-                          (pagination-title pagination))))
+    (= (page-title) (+ (| *gallery-country*
+                          (+ (lang de "Verschiedene L&auml;nder"
+                                   en "Various countries")))
+                       " &#8208; "
+                       (pagination-title pagination)))
     (set-port
       (tpl-gallery-index `((pagination . ,pagination)
                            (images     . ,images)
