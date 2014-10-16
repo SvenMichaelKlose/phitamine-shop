@@ -2,5 +2,4 @@
 
 (include "config.php")
 (db-connect)
-(phitamine)
-(princ (tpl-main))
+(phitamine #'(() (princ (tpl-main))))
