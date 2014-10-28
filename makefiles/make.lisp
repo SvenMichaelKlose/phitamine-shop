@@ -34,5 +34,6 @@
              ,@(& *have-css-upload?*
                   '("css-upload.lisp"))
              "toplevel.lisp")
-    :script-path "/shop")
+    :script-path "/shop"
+    :filename    "index.php")
 (quit)
