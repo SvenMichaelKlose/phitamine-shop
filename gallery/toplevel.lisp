@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
 
 (defvar *image-index* nil)
 
@@ -15,5 +15,5 @@
   (find-images (gallery-image-selection) :offset offset :limit limit))
 
 (defun gallery-id-largepage (id)
-  (++ (position-if [== id (number (@ _ 'id))]
+  (++ (position-if [== id (number (href _ 'id))]
                    (gallery-find-images))))
