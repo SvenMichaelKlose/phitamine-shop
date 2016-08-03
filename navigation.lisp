@@ -1,11 +1,11 @@
-;;;;; Copyright (c) 2012–2013 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2013,2015 Sven Michael Klose <pixel@copei.de>
 
 (define-template tpl-navigation-login   :path "templates/navigation-logged-in.lisp")
 (define-template tpl-navigation-nologin :path "templates/navigation-not-logged-in.lisp")
 (define-template tpl-navigation-contact :path "templates/navigation-contact.lisp")
 (define-template tpl-navigation-upload  :path "templates/navigation-upload.lisp")
 
-(dolist (i '(login contact gallery-upload cart))
+(@ (i '(login contact gallery-upload cart))
   (= (group-port i) 'navi))
 
 (defun navi-url (&optional (x nil))
