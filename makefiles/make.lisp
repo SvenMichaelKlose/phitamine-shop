@@ -1,4 +1,6 @@
-;;;;; Copyright (c) 2012,2014 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012,2014,2016 Sven Michael Klose <pixel@copei.de>
+
+(defvar *fallback-language* 'en)
 
 (load "phitamine/make-project.lisp")
 (load "config-compile-time.lisp")
