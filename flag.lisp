@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012,2015 Sven Michael Klose <pixel@copei.de>
 
 (defvar *flags*
   '("Afghanistan" "Albania" "Algeria" "American_Samoa" "Andorra" "Angola" "Anguilla" "Antigua_and_Barbuda" "Argentina" "Armenia" "Aruba" "Australia" "Austria" "Azerbaijan"
@@ -31,7 +31,7 @@
 
 (defun flag-options (selected)
   (unless *flags2*
-    (= *flags2* (filter [cons _ _] *flags*)))
+    (= *flags2* (@ [. _ _] *flags*)))
   (lhtml-options *flags2* selected))
 
 (defun flag-src (name)

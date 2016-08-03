@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2015 Sven Michael Klose <pixel@copei.de>
 
 (defvar *thumbnail-width*)
 (defvar *thumbnail-height*)
@@ -30,7 +30,7 @@
 
 (defun create-images (files)
   (create-image-paths (user-id))
-  (filter #'create-image files)
+  (@ #'create-image files)
   (action-redirect :remove 'upload-images :add 'uploaddone))
 
 (defun upload-images (x)
