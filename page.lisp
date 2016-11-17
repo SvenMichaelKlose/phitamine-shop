@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
 
 (defvar *page-title*)
 (defvar *page-status* nil)
@@ -25,4 +25,4 @@
 (defun (= page-status) (x)  (= *page-status* `(,x)))
 
 (defun url (x)
-  (+ *base-url* x))
+  (string-concat *base-url* x))
