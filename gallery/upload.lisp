@@ -13,7 +13,6 @@
     (file_put_contents ! (file_get_contents tmp-name))))
 
 (defun create-image (x)
-  (print x)
   (with (name       (assoc-value 'name x)
          tmp-name   (assoc-value 'tmp-name x)
          mime-type  (assoc-value 'type x))
