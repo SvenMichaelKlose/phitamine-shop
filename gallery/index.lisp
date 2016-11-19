@@ -1,4 +1,4 @@
-;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
 
 (defvar *gallery-page-size* 12)
 
@@ -10,8 +10,8 @@
   (funcall (? (logged-in?) ;(== (user-id) (@ img 'id_user)))
               #'tpl-gallery-image-form
               #'tpl-gallery-image)
-           (+ `((image-src        . ,(thumbnail-src img))
-                (link-image-large . ,(action-url :add `(large ,(+ (pagination-offset pagination) (param 'index))))))
+           (+ (list (. 'image-src        (thumbnail-src img))
+                    (. 'link-image-large (action-url :add `(large ,(+ (pagination-offset pagination) (param 'index))))))
               img)))
 
 (defun lml-images (pagination x)
@@ -36,9 +36,9 @@
                        " &#8208; "
                        (pagination-title pagination)))
     (set-port
-      (tpl-gallery-index `((pagination . ,pagination)
-                           (images     . ,images)
-                           (lml-images . ,(lml-images pagination images)))))
+      (tpl-gallery-index (list (. 'pagination pagination)
+                               (. 'images     images)
+                               (. 'lml-images (lml-images pagination images)))))
     (values `(,x. ,page) ..x)))
 
 (define-action gallery)

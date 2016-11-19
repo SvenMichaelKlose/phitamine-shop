@@ -1,4 +1,4 @@
-; Copyright (c) 2012–2015 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2016 Sven Michael Klose <pixel@copei.de>
 
 (defvar *thumbnail-width*)
 (defvar *thumbnail-height*)
@@ -21,12 +21,12 @@
       (= name (+ "_" name)))
     (create-original name tmp-name)
     (create-thumbnail name)
-    (insert-image `((id_user  . ,(user-id))
-                    (name     . ,name)
-                    (title    . "")
-                    (type     . ,mime-type)
-                    (f_public . "0")
-                    (t_create . ,(sql-date))))))
+    (insert-image (list (. 'id_user  (user-id))
+                        (. 'name     name)
+                        (. 'title    "")
+                        (. 'type     mime-type)
+                        (. 'f_public "0")
+                        (. 't_create (sql-date))))))
 
 (defun create-images (files)
   (create-image-paths (user-id))
