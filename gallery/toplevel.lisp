@@ -15,5 +15,5 @@
   (find-images (gallery-image-selection) :offset offset :limit limit))
 
 (defun gallery-id-largepage (id)
-  (++ (position-if [== id (number (href _ 'id))]
+  (++ (position-if [== id (number (assoc-value 'id _))]
                    (gallery-find-images))))

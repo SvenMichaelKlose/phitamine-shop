@@ -8,7 +8,7 @@
      (p ,(param 'title))
      (a :href ,(action-url :update `((gallery ,(integer (++ (/ item-large-index *gallery-page-size*))))
                                      (large ,item-large-index)))
-       (img :src ,(thumbnail-src (find-image `(id . ,id)))))
+       (img :src ,(thumbnail-src (find-image (. 'id id)))))
      "&euro;" (label ,(param 'price))
      (a :href ,(action-url :add `(cart-remove ,id))
         ,(lang de "Wieder entnehmen..."
