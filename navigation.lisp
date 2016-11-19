@@ -1,4 +1,4 @@
-; Copyright (c) 2012–2013,2015 Sven Michael Klose <pixel@copei.de>
+; Copyright (c) 2012–2013,2015–2016 Sven Michael Klose <pixel@copei.de>
 
 (define-template tpl-navigation-login   :path "templates/navigation-logged-in.lisp")
 (define-template tpl-navigation-nologin :path "templates/navigation-not-logged-in.lisp")
@@ -15,13 +15,13 @@
   (funcall (? (logged-in?)
               #'tpl-navigation-login
               #'tpl-navigation-nologin)
-           `((link-home    . ,(action-url *home-components*))
-             (link-login   . ,(navi-url 'login))
-             (link-logout  . ,(navi-url 'logout))
-             (link-cart    . ,(navi-url 'cart))
-             (link-contact . ,(navi-url 'contact))
-             (link-upload  . ,(navi-url 'upload-images))
-             (link-imprint . ,(action-url (components-w/o-port 'content) :add 'imprint))
-             (alias        . ,(user-alias)))))
+           (list (. 'link-home    (action-url *home-components*))
+                 (. 'link-login   (navi-url 'login))
+                 (. 'link-logout  (navi-url 'logout))
+                 (. 'link-cart    (navi-url 'cart))
+                 (. 'link-contact (navi-url 'contact))
+                 (. 'link-upload  (navi-url 'upload-images))
+                 (. 'link-imprint (action-url (components-w/o-port 'content) :add 'imprint))
+                 (. 'alias        (user-alias)))))
 
 (request-port 'navi #'tpl-navigation)
