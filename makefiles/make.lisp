@@ -35,6 +35,7 @@
              "cart.lisp"
              ,@(& *have-css-upload?*
                   '("css-upload.lisp"))
+             "config.lisp"
              "toplevel.lisp")
     :script-path "/shop"
     :filename    "index.php")
