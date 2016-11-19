@@ -4,11 +4,11 @@
 
 (defun gallery-image-selection-by-user ()
   (unless (logged-in?)
-    `((f_public . "1"))))
+    (list (. 'f_public "1"))))
 
 (defun gallery-image-selection ()
   (+ (!? *gallery-country*
-         `((country . ,!)))
+         (list (. 'country !)))
      (gallery-image-selection-by-user)))
 
 (defun gallery-find-images (&key (offset nil) (limit nil))
