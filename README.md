@@ -9,7 +9,7 @@ upload form for your favourite design artists.
 
 Check out the example installation at:
 
-http://hugbox.org/pixel/software/phitamine-shop/
+http://appsit.es/phitamine-shop/
 
 # Installing
 
