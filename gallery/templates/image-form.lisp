@@ -6,7 +6,6 @@
   (select :name "country[]" ,@(flag-options (param 'country)))
   (input :type "text" :name "price[]" :size "8" :value ,(param 'price))
   (br)
-  (input :type "hidden" :name ,(+ "f_public[" *image-index* "]") :value "0")
   (input :type "checkbox" :name ,(+ "f_public[" *image-index* "]") :value "1"
          ,@(& (string== "1" (param 'f_public))
               `(:checked "checked"))
