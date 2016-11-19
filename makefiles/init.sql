@@ -15,6 +15,7 @@ CREATE TABLE images (
 	title VARCHAR(255) DEFAULT '',
 	type VARCHAR(255) DEFAULT 'image/plain',
 	country VARCHAR(255) DEFAULT '',
+    price DECIMAL(8,2) DEFAULT '0.0',
 	t_create DATETIME NOT NULL,
 	f_public BOOLEAN NOT NULL DEFAULT 0,
 	id_user INT NOT NULL
