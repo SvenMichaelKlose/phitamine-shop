@@ -7,7 +7,7 @@
 (defun original-src (img)  (image-src img 'original))
 
 (defun generate-gallery-image (path-maker x)
-  (alet (find-image `(id . ,(number .x.)))
+  (alet (find-image (. 'id (number .x.)))
     (send-header :mime-type (assoc-value 'type !)
                  :mod-time  (strtotime (assoc-value 't_create !))
                  :max-age   0)
