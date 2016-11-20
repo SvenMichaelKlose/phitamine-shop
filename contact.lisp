@@ -9,7 +9,8 @@
        "Reply-To: " ! *terpri*)))
 
 (defun send-contact-mail ()
-  (mail *contact-to* *contact-subject*
+  (mail *contact-to*
+        *contact-subject*
         (href (form-data) 'text)
         (contact-mail-header))
   (action-redirect :add 'contactdone))
