@@ -32,7 +32,7 @@
 (defun flag-options (selected)
   (unless *flags2*
     (= *flags2* (@ [. _ _] *flags*)))
-  (lhtml-options *flags2* selected))
+  (html-options *flags2* selected))
 
 (defun flag-src (name)
   (+ *base-url* "/media/flags/" name ".png"))
