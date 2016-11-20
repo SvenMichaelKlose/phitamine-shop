@@ -12,7 +12,7 @@
 (= *contact-to*      "pixel@copei.de")
 (= *contact-subject* "Your message to Shop Hope Stamps")
 
-(= *gallery-archive-path* "/gallery-images")
+(= *gallery-archive-path* "/phitamine-shop/gallery-images")
 (= *gallery-page-size*    12)
 
 (= *thumbnail-width*  200)

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "Flaemische Kanzleischrift";
-	src: url('/preview/shophope/media/schriften/flaemische_kanzleischrift-webfont.eot');
-	src: url('/preview/shophope/media/schriften/flaemische_kanzleischrift-webfont.eot?#iefix') format('embedded-opentype'),
-	url('/preview/shophope/media/schriften/flaemische_kanzleischrift-webfont.woff') format('woff'),
-	url('/preview/shophope/media/schriften/flaemische_kanzleischrift-webfont.ttf') format('truetype'),
-	url('/preview/shophope/media/schriften/flaemische_kanzleischrift-webfont.svg#flaemische_kanzleischriftRg') format('svg');
+	src: url('/phitamine-shop/media/schriften/flaemische_kanzleischrift-webfont.eot');
+	src: url('/phitamine-shop/media/schriften/flaemische_kanzleischrift-webfont.eot?#iefix') format('embedded-opentype'),
+	url('/phitamine-shop/media/schriften/flaemische_kanzleischrift-webfont.woff') format('woff'),
+	url('/phitamine-shop/media/schriften/flaemische_kanzleischrift-webfont.ttf') format('truetype'),
+	url('/phitamine-shop/media/schriften/flaemische_kanzleischrift-webfont.svg#flaemische_kanzleischriftRg') format('svg');
 }
 
 .status {
@@ -13,7 +13,7 @@
 	padding-bottom: .3em;
 	padding-left: 40px;
 	padding-right: 40px;
-	background-image: url("/preview/shophope/media/bg3.gif");
+	background-image: url("/phitamine-shop/media/bg3.gif");
 	color: #A90329;
 	font-size: 16pt;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", 'Verdana', 'Helvetica', 'Arial', 'sans-serif';
@@ -76,7 +76,7 @@ input {
 .footer,
 .navi a:link,
 .navi a:visited {
-	background: url('/preview/shophope/media/bg1.gif');
+	background: url('/phitamine-shop/media/bg1.gif');
 }
 
 .header {
@@ -91,7 +91,7 @@ input {
 	width: 100px;
 	height: 100px;
 	position: absolute;
-	background: url('/preview/shophope/media/logo_tuerkis_klein.png') no-repeat;
+	background: url('/phitamine-shop/media/logo_tuerkis_klein.png') no-repeat;
 }
 
 .logo1 {
@@ -126,7 +126,7 @@ input {
 	right: 55%;
 	width: 75%;
 	min-height: 100%;
-	background: url(/preview/shophope/media/bg3.gif);
+	background: url(/phitamine-shop/media/bg3.gif);
 }
 
 .container2 {
@@ -134,7 +134,7 @@ input {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	background-image: url(/preview/shophope/media/bg124.gif);
+	background-image: url(/phitamine-shop/media/bg124.gif);
 }
 
 .col1,
@@ -237,7 +237,7 @@ input {
 .imageform select {
 	text-align: right;
 	padding-left: 10px;
-	background: url(/preview/shophope/media/bg3.gif);
+	background: url(/phitamine-shop/media/bg3.gif);
 }
 
 .imageform label {
@@ -254,7 +254,7 @@ input {
 	font-size: 20px;
 	text-align: right;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", 'Verdana', 'Helvetica', 'Arial', 'sans-serif';
-	background-image: url(/preview/shophope/media/bg3.gif);
+	background-image: url(/phitamine-shop/media/bg3.gif);
 }
 
 .col2 button,
@@ -414,7 +414,7 @@ button,
 .navi textarea,
 .navi a:active,
 .navi a:hover {
-	background-image: url(/preview/shophope/media/bg124.gif);
+	background-image: url(/phitamine-shop/media/bg124.gif);
 }
 
 .navi input[type="text"],
@@ -428,19 +428,19 @@ button,
 	border-top: 2px solid #7C7777;
 	border-left: 2px solid #7C7777;
 	border-right: 4px solid #FFF;
-	background-image: url(/preview/shophope/media/bg124.gif);
+	background-image: url(/phitamine-shop/media/bg124.gif);
 }
 
 button,
 input[type="submit"] {
 	color: #ff9;
-	background: url('/preview/shophope/media/bg1.gif');
+	background: url('/phitamine-shop/media/bg1.gif');
 }
 
 button:hover,
 input[type="submit"]:hover {
 	color: #A90329;
-	background: url('/preview/shophope/media/bg124.gif');
+	background: url('/phitamine-shop/media/bg124.gif');
 }
 
 .navi a {
@@ -541,11 +541,11 @@ h1 img {
 	text-align: left;
 	width: 100%;
 	height: 41px;
-	background: url('/preview/shophope/media/bg124.gif');
+	background: url('/phitamine-shop/media/bg124.gif');
 }
 
 .navi .countries a.selected {
-	background: url('/preview/shophope/media/bg1.gif');
+	background: url('/phitamine-shop/media/bg1.gif');
 }
 
 .navi .countries img {
@@ -589,7 +589,7 @@ h1 img {
 	text-align: right;
 	color: #A90329;
 	padding-right: 10px;
-	background: url('/preview/shophope/media/bg3.gif');
+	background: url('/phitamine-shop/media/bg3.gif');
 	width: 200px;
 	margin-top: 15px;
 }
@@ -620,12 +620,12 @@ h1 img {
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 2px solid #FFF;
-	background-image: url("/preview/shophope/media/bg1.gif");
+	background-image: url("/phitamine-shop/media/bg1.gif");
 	z-index: 6050;
 }
 
 .back:hover{
-	background-image: url("/preview/shophope/media/bg124.gif");
+	background-image: url("/phitamine-shop/media/bg124.gif");
 }
 
 .col2 h1,
@@ -647,7 +647,7 @@ h1 img {
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/preview/shophope/media/bg3.gif");
+	background-image: url("/phitamine-shop/media/bg3.gif");
 	z-index: 6000;
 }
 
@@ -695,7 +695,7 @@ h1 img {
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/preview/shophope/media/bg3.gif");
+	background-image: url("/phitamine-shop/media/bg3.gif");
 	z-index: 6000;
 }
 
@@ -718,7 +718,7 @@ h1 img {
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/preview/shophope/media/bg3.gif");
+	background-image: url("/phitamine-shop/media/bg3.gif");
 	z-index: 6000;
 }
 
@@ -740,29 +740,29 @@ form > label {
 
 .first {
 	right: 135px;
-	background: url('/preview/shophope/media/first.png') no-repeat;
+	background: url('/phitamine-shop/media/first.png') no-repeat;
 }
 
 .first:hover{
-	background: url('/preview/shophope/media/first_hover.png') no-repeat;
+	background: url('/phitamine-shop/media/first_hover.png') no-repeat;
 }
 
 .prev {
 	right: 105px;
-	background: url('/preview/shophope/media/prev.png') no-repeat;
+	background: url('/phitamine-shop/media/prev.png') no-repeat;
 }
 
 .prev:hover {
-	background: url('/preview/shophope/media/prev_hover.png') no-repeat;
+	background: url('/phitamine-shop/media/prev_hover.png') no-repeat;
 }
 
 .next {
 	right: 55px;
-	background: url('/preview/shophope/media/next.png') no-repeat;
+	background: url('/phitamine-shop/media/next.png') no-repeat;
 }
 
 .next:hover{
-	background: url('/preview/shophope/media/next_hover.png') no-repeat;
+	background: url('/phitamine-shop/media/next_hover.png') no-repeat;
 }
 
 .first,
@@ -780,11 +780,11 @@ form > label {
 
 .last {
 	right: 25px;
-	background: url('/preview/shophope/media/last.png') no-repeat;
+	background: url('/phitamine-shop/media/last.png') no-repeat;
 }
 
 .last:hover{
-	background: url('/preview/shophope/media/last_hover.png') no-repeat;
+	background: url('/phitamine-shop/media/last_hover.png') no-repeat;
 }
 
 .cart_item img {
