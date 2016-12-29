@@ -8,7 +8,7 @@
 (define-template tpl-main :path "templates/main.lisp")
 
 (defun page-title ()       *page-title*)
-(defun (= page-title) (x)  (= *page-title* (+ "Shop Hope Stamps" (? x (+ " &#8208; " x) ""))))
+(defun (= page-title) (x)  (= *page-title* (+ "Phitamine Shop" (? x (+ " &#8208; " x) ""))))
 (= (page-title) nil)
 
 (defun pagination-title (pagination)

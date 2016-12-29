@@ -20,7 +20,7 @@
                     "&quot;."))))))
     (div :class "header"
 	  (a :href ,(action-url *home-components*) :class "logo1" "")
-	  (h1 :class "stampheader" "Shop Hope Stamps")
+	  (h1 :class "stampheader" "Phitamine Shop")
 	  (a :href ,(action-url *home-components*) :class "logo2" ""))
     (div :class "container2"
       (div :class "container1"
