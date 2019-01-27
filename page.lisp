@@ -5,8 +5,12 @@
 
 (define-template tpl-main :path "templates/main.lisp")
 
-(fn page-title ()       *page-title*)
-(fn (= page-title) (x)  (= *page-title* (+ "Phitamine Shop" (? x (+ " &#8208; " x) ""))))
+(fn page-title ()
+  *page-title*)
+
+(fn (= page-title) (x)
+  (= *page-title* (+ "Phitamine Shop" (? x (+ " &#8208; " x) ""))))
+
 (= (page-title) nil)
 
 (fn pagination-title (pagination)
@@ -19,8 +23,12 @@
              de " von ")
        (pagination-total pagination))))
 
-(fn page-status ()       *page-status*)
-(fn (= page-status) (x)  (= *page-status* `(,x)))
+(fn page-status ()
+  *page-status*)
+
+(fn (= page-status) (x)
+  (& x
+     (= *page-status* `(,x))))
 
 (fn url (x)
   (string-concat *base-url* x))
