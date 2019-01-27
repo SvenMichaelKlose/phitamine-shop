@@ -1,7 +1,7 @@
 ,(format nil "<!doctype html>~%")
 (html
   (head
-    (meta :encoding "utf-8")
+    (meta :charset "utf-8")
     (title ,(page-title))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/reset.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/main.css"))
