@@ -3,14 +3,14 @@
 (= *home-components* '("gallery" "1"))
 (= *available-languages* '(en de))
 
-(= *db-user*         "")
-(= *db-password*     "")
-(= *db-name*         "")
-(= *db-host*         "localhost")
+(= *db-user*         "root")
+(= *db-password*     "fnord")
+(= *db-name*         "fnord")
+(= *db-host*         "db")
 (= *db-table-prefix* "")
 
 (= *contact-to*      "pixel@copei.de")
-(= *contact-subject* "Your message to Shop Hope Stamps")
+(= *contact-subject* "Your message to Phitamine Shop")
 
 (= *gallery-archive-path* "/phitamine-shop/gallery-images")
 (= *gallery-page-size*    12)

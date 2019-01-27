@@ -1,17 +1,15 @@
-; Copyright (c) 2012,2014,2016 Sven Michael Klose <pixel@copei.de>
+(var *fallback-language* 'en)
 
-(defvar *fallback-language* 'en)
-
-(load "phitamine/make-project.lisp")
+(load "tre_modules/phitamine/make-project.lisp")
 (load "config-compile-time.lisp")
 
 (= (transpiler-assert? *php-transpiler*) t)
 
 (make-phitamine-project "Shop Hope Stamps"
     :files `("config-compile-time.lisp"
-             "centralservices/pagination.lisp"
-             "centralservices/user-management/login.lisp"
-             "centralservices/cart.lisp"
+             "tre_modules/centralservices/pagination.lisp"
+             "tre_modules/centralservices/user-management/login.lisp"
+             "tre_modules/centralservices/cart.lisp"
              "db-tables.lisp"
              "navigation.lisp"
              "page.lisp"

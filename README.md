@@ -7,27 +7,21 @@ phitamine and centralservices.  It pitches phitamine's nifty
 URL schema for multiple ports, a cart with undo and a CSS
 upload form for your favourite design artists.
 
-Check out the example installation at:
+You need the tré programming language on some Unix with
+'git' and 'docker-compose' installed.
 
-http://appsit.es/phitamine-shop/
+http://github.com/SvenMichaelKlose/tre
 
-# Installing
+# Running it
 
-You need the environment directory of tré linked here as
-well as centralservices and phitamine. Like so:
+Run 'install-modules.sh' to clone all required modules into
+directory 'tre_modules'.
 
-    ln -s ../tre/environment .
-    ln -s ../phitamine .
-    ln -s ../centralservices .
+Run 'make.sh' and you'll find a huge index.php in a newly
+create directory called 'compiled'.
 
-# Compiling
-
-First of all, tweak the configuration files and 'htaccess'.
-Rename 'htaccess' to '.htaccess'.  Then run
-
-    make.sh
-
-and you'll find a huge index.php in a newly create directory
-called 'compiled'.  Upload that file as well as 'config.php',
-'.htaccess' and the directories 'css' and 'media' to your web
-server.
+Step into 'compiled' and run 'sudo docker-compose up'. When
+that's up, install the database by running
+'mysql -u root -p -h 0.0.0.0 fnord <init.sql'.
+The password is 'fnord'.  Now you can browse the empty shop
+at address http://localhost:19020.
