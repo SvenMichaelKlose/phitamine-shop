@@ -12,8 +12,8 @@
                     (. 'link-image-large (action-url :add `(large ,(+ (pagination-offset pagination) (param 'index))))))
               img)))
 
-(fn lml-images (pagination x)
-  (template-list [make-image pagination _] x))
+(fn lml-images (pagination images)
+  (template-list [make-image pagination _] images))
 
 (fn gallery-pagination (page)
   (make-pagination :page  page
