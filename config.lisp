@@ -12,7 +12,7 @@
 (= *contact-to*      "pixel@copei.de")
 (= *contact-subject* "Your message to Phitamine Shop")
 
-(= *gallery-archive-path* "/phitamine-shop/gallery-images")
+(= *gallery-archive-path* "/gallery-images")
 (= *gallery-page-size*    12)
 
 (= *thumbnail-width*  200)
