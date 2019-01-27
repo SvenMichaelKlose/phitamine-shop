@@ -14,7 +14,7 @@
   (with (name       (assoc-value 'name x)
          tmp-name   (assoc-value 'tmp-name x)
          mime-type  (assoc-value 'type x))
-    (unless (empty-string? tmp-name)    ; Should X get in here in the first place?
+    (unless (empty-string? tmp-name)
       (while (file_exists (path-original (user-id) name))
              nil
         (= name (+ "_" name)))
