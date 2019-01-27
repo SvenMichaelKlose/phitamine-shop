@@ -1,7 +1,7 @@
 ,(format nil "<!doctype html>~%")
 (html
   (head
-    (meta :http-equiv "Content-Type" :content "charset=utf-8")
+    (meta :encoding "utf-8")
     (title ,(page-title))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/reset.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/main.css"))
@@ -10,7 +10,8 @@
     (script :type "text/javascript" :src ,(url "/js/jquery.jqzoom-core-pack.js") "")
     ,*js-jqzoom*)
   (body
-    ,@(when (| (page-status) (logged-in?))
+    ,@(when (| (page-status)
+               (logged-in?))
         `((div :class "status"
             ,@(page-status)
             ,@(when (logged-in?)
