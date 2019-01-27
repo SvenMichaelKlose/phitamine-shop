@@ -4,7 +4,8 @@
                                                    en "You are logged out.")))
 (set-action-group 'logoutdone 'login)
 
-(define-redirect-catcher (logindone :status (+ (lang de "Willkommen"
-                                                     en "Welcome")
-                                               ", " (user-alias) "!")))
+(define-redirect-catcher (logindone :status (when (logged-in?)
+                                              (+ (lang de "Willkommen"
+                                                       en "Welcome")
+                                                 ", " (user-alias) "!"))))
 (set-action-group 'logindone 'login)
