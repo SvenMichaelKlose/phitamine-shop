@@ -1,2 +1,2 @@
-(defvar *have-cart?* t)
-(defvar *have-css-upload?* nil)
+(const *have-cart?* t)
+(const *have-css-upload?* nil)

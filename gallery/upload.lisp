@@ -1,18 +1,16 @@
-; Copyright (c) 2012–2016 Sven Michael Klose <pixel@copei.de>
+(var *thumbnail-width*)
+(var *thumbnail-height*)
 
-(defvar *thumbnail-width*)
-(defvar *thumbnail-height*)
-
-(defun create-thumbnail (name)
+(fn create-thumbnail (name)
   (alet (new *Imagick (path-original (user-id) name))
     (!.scale-image *thumbnail-width* *thumbnail-height* t)
     (!.write-image (path-thumbnail (user-id) name))))
 
-(defun create-original (name tmp-name)
+(fn create-original (name tmp-name)
   (aprog1 (path-original (user-id) name)
     (file_put_contents ! (file_get_contents tmp-name))))
 
-(defun create-image (x)
+(fn create-image (x)
   (with (name       (assoc-value 'name x)
          tmp-name   (assoc-value 'tmp-name x)
          mime-type  (assoc-value 'type x))
@@ -29,12 +27,12 @@
                           (. 'f_public "0")
                           (. 't_create (sql-date)))))))
 
-(defun create-images (files)
+(fn create-images (files)
   (create-image-paths (user-id))
   (@ #'create-image files)
   (action-redirect :remove 'upload-images :add 'uploaddone))
 
-(defun upload-images (x)
+(fn upload-images (x)
   (!? (form-files 'image)
       (create-images !))
   (set-port (tpl-navigation-upload))

@@ -1,6 +1,4 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
-
-(defun tpl-gallery-buy ()
+(fn tpl-gallery-buy ()
   (& *have-cart?*
      (alet (param 'id)
        (? (cart-item-count !)

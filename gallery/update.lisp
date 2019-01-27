@@ -1,6 +1,4 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
-
-(defun gallery-update-images (x)
+(fn gallery-update-images (x)
   (when (has-form?)
     (update-images (form-alists))
     (action-redirect :remove 'gallery-update-images :add 'gallery-updated)))

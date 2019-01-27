@@ -1,12 +1,10 @@
-; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
-
-(defvar *gallery-page-size* 12)
+(var *gallery-page-size* 12)
 
 (define-template tpl-gallery-index       :path "gallery/templates/index.lisp")
 (define-template tpl-gallery-image       :path "gallery/templates/image.lisp")
 (define-template tpl-gallery-image-form  :path "gallery/templates/image-form.lisp")
 
-(defun make-image (pagination img)
+(fn make-image (pagination img)
   (funcall (? (logged-in?) ;(== (user-id) (@ img 'id_user)))
               #'tpl-gallery-image-form
               #'tpl-gallery-image)
@@ -14,19 +12,19 @@
                     (. 'link-image-large (action-url :add `(large ,(+ (pagination-offset pagination) (param 'index))))))
               img)))
 
-(defun lml-images (pagination x)
+(fn lml-images (pagination x)
   (template-list [make-image pagination _] x))
 
-(defun gallery-pagination (page)
+(fn gallery-pagination (page)
   (make-pagination :page  page
                    :size  *gallery-page-size*
                    :total (get-image-count (gallery-image-selection))))
 
-(defun paginated-images (pagination)
+(fn paginated-images (pagination)
   (gallery-find-images :limit *gallery-page-size*
                        :offset (pagination-offset pagination)))
 
-(defun gallery (x)
+(fn gallery (x)
   (with (page        (number (| .x. 1))
          pagination  (gallery-pagination page)
          images      (paginated-images pagination))

@@ -1,8 +1,6 @@
-; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
-
 (define-template tpl-gallery-image-large :path "gallery/templates/image-large.lisp")
 
-(defun gallery-large (x)
+(fn gallery-large (x)
   (with (images     (gallery-find-images)
          page       (number .x.)
          pagination (make-pagination :page  page

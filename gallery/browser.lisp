@@ -1,6 +1,4 @@
-;;;;; Copyright (c) 2012–2014 Sven Michael Klose <pixel@copei.de>
-
-(defun browser-item-maker (images typ idx)
+(fn browser-item-maker (images typ idx)
   (? (assoc 'large *components*)
      `(,(? (eq 'page typ)
            idx
@@ -10,7 +8,7 @@
               idx
               ""))))
 
-(defun displaying-large-image? ()
+(fn displaying-large-image? ()
   (assoc 'large *components*))
 
 (def-pagination tpl-gallery-browser (pagination images)

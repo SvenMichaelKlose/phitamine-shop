@@ -1,5 +1,3 @@
-;;;;; Copyright (c) 2012 Sven Michael Klose <pixel@copei.de>
-
 (define-sql-table users user
 	(id                 "INT PRIMARY KEY AUTO_INCREMENT")
 	(alias              "VARCHAR(255) UNIQUE KEY")

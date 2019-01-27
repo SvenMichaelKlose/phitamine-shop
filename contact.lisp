@@ -1,21 +1,19 @@
-; Copyright (c) 2012–2014,2016 Sven Michael Klose <pixel@copei.de>
+(var *contact-to*)
+(var *contact-subject*)
 
-(defvar *contact-to*)
-(defvar *contact-subject*)
-
-(defun contact-mail-header ()
+(fn contact-mail-header ()
   (alet (href (form-data) 'email)
     (+ "From: " ! *terpri*
        "Reply-To: " ! *terpri*)))
 
-(defun send-contact-mail ()
+(fn send-contact-mail ()
   (mail *contact-to*
         *contact-subject*
         (href (form-data) 'text)
         (contact-mail-header))
   (action-redirect :add 'contactdone))
 
-(defun contact (x)
+(fn contact (x)
   (?
     (form-complete?) (send-contact-mail)
     (has-form?)      (= (page-status) (lang de "Das Formular ist unvollst&auml;ndig."

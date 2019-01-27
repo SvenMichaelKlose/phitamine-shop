@@ -1,5 +1,3 @@
-; Copyright (c) 2012–2013,2015–2016 Sven Michael Klose <pixel@copei.de>
-
 (define-template tpl-navigation-login   :path "templates/navigation-logged-in.lisp")
 (define-template tpl-navigation-nologin :path "templates/navigation-not-logged-in.lisp")
 (define-template tpl-navigation-contact :path "templates/navigation-contact.lisp")
@@ -8,10 +6,10 @@
 (@ (i '(login contact gallery-upload cart))
   (= (group-port i) 'navi))
 
-(defun navi-url (&optional (x nil))
+(fn navi-url (&optional (x nil))
   (action-url (components-w/o-port 'navi) :add x))
 
-(defun tpl-navigation ()
+(fn tpl-navigation ()
   (funcall (? (logged-in?)
               #'tpl-navigation-login
               #'tpl-navigation-nologin)

@@ -1,6 +1,4 @@
-; Copyright (c) 2012,2015 Sven Michael Klose <pixel@copei.de>
-
-(defvar *flags*
+(const *flags*
   '("Afghanistan" "Albania" "Algeria" "American_Samoa" "Andorra" "Angola" "Anguilla" "Antigua_and_Barbuda" "Argentina" "Armenia" "Aruba" "Australia" "Austria" "Azerbaijan"
     "Bahamas" "Bahrain" "Bangladesh" "Barbados" "Belarus" "Belgium" "Belize" "Benin" "Bermuda" "Bhutan" "Bolivia" "Bosnia" "Botswana" "Brazil" "British_Virgin_Islands" "Brunei" "Bulgaria" "Burkina_Faso" "Burundi"
     "Cambodia" "Cameroon" "Canada" "Cape_Verde" "Cayman_Islands" "Central_African_Republic" "Chad" "Chile" "China" "Christmas_Island" "Colombia" "Comoros" "Cook_Islands" "Costa_Rica" "Côte_d\"Ivoire" "Croatia" "Cuba" "Cyprus" "Czech_Republic"
@@ -27,15 +25,15 @@
     "Yemen"
     "Zambia" "Zimbabwe"))
 
-(defvar *flags2* nil)
+(const *flags2* nil)
 
-(defun flag-options (selected)
+(fn flag-options (selected)
   (unless *flags2*
     (= *flags2* (@ [. _ _] *flags*)))
   (html-options *flags2* selected))
 
-(defun flag-src (name)
+(fn flag-src (name)
   (+ *base-url* "/media/flags/" name ".png"))
 
-(defun flag-name? (name)
+(fn flag-name? (name)
   (member name *flags* :test #'eq))

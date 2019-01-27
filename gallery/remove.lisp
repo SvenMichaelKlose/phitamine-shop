@@ -1,13 +1,11 @@
-;;;;; Copyright (c) 2012,2014 Sven Michael Klose <pixel@copei.de>
-
 (define-redirect-catcher (image-removed :status (lang en "The image has been removed."
                                                       de "Das Bild wurde entfernt.")))
 
-(defun unlink-if-exists (pathname)
+(fn unlink-if-exists (pathname)
   (& (file_exists pathname)
      (unlink pathname)))
 
-(defun remove-image (x)
+(fn remove-image (x)
   (with (id    (number .x.)
          name  (@ (find-image `(id . ,id)) 'name))
     (unlink-if-exists (path-original (user-id) name))
