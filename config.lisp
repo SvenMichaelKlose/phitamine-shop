@@ -1,7 +1,8 @@
 (date_default_timezone_set "Europe/Berlin")
 
+(var *available-languages* '(en de))
+
 (= *home-components* '("gallery" "1"))
-(= *available-languages* '(en de))
 
 (= *db-user*         "root")
 (= *db-password*     "fnord")
