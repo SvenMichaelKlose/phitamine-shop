@@ -16,12 +16,12 @@
 (fn pagination-title (pagination)
   (with (from  (pagination-from pagination)
          to    (pagination-to pagination))
-    (+ (? (== to from)
-          (pagination-page pagination)
-          (+ from "&#8208;" to))
-       (lang en " of "
-             de " von ")
-       (pagination-total pagination))))
+    (string-concat (? (== to from)
+                      (pagination-page pagination)
+                      (+ from "&#8208;" to))
+                   (lang en " of "
+                         de " von ")
+                   (pagination-total pagination))))
 
 (fn page-status ()
   *page-status*)
