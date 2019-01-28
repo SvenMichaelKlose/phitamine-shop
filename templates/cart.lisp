@@ -11,7 +11,7 @@
   (label ,(lang de "Name" en "Name"))(br)(input :type "text" :name "surname")
   (label ,(lang de "Stra&szlig;e/Nr." en "Street/No."))(br)(input :type "text" :name "surname")
   (label ,(lang de "Ort/PLZ" en "City/ZIP"))(br)(input :type "text" :name "surname")
-  (select :name "country" ,@(flag-options "Germany"))
+  (select :name "country" ,(flag-options "Germany"))
   (label ,(lang de "Fon" en "Phone"))(br)(input :type "text" :name "surname")
   (input :type "submit" :value ,(lang de "Bestellen..."
                                       en "Order...")))
