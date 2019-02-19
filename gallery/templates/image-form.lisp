@@ -13,8 +13,8 @@
            en "public"))
   (button :onclick ,(alet (param 'title)
                       (+ "javascript: if (confirm ('"
-                         (lang en (+ "Really remove this image with the title\\n&quot;" ! "&quot;?")
-                               de (+ "Dieses Bild mit dem Titel\\n&quot; " ! "&quot;\\nwirklich entfernen?"))
+                         (lang en (+ "Really remove this image with the title &quot;" ! "&quot;?")
+                               de (+ "Dieses Bild mit dem Titel\\n&quot; " ! "&quot; wirklich entfernen?"))
                          "')) { window.location = '" (action-url :add (list 'remove-image (param 'id))) "'; return false; }"))
       ,(lang de "entfernen"
              en "remove")))
