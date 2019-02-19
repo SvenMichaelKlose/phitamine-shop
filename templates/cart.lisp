@@ -1,17 +1,30 @@
-(h1 ,(lang de "Warenkorb"
-           en "Cart"))
+(h1 ,(lang en "Cart"
+           de "Warenkorb"))
 (a :class "cancel" :href ,(action-url :remove 'cart)
-  ,(lang de "zur&uuml;ck" en "back"))
+  ,(lang en "back"
+         de "zurück"))
 ,(tpl-cart-history)
 ,(cart-items)
 (p "Total: &euro;" ,(cart-price-total))
 (form :action "" :method "post"
-  (h1 ,(lang de "Bestellung" en "Order"))
-  (label ,(lang de "Vorname" en "Surname"))(br)(input :type "text" :name "surname")
-  (label ,(lang de "Name" en "Name"))(br)(input :type "text" :name "surname")
-  (label ,(lang de "Stra&szlig;e/Nr." en "Street/No."))(br)(input :type "text" :name "surname")
-  (label ,(lang de "Ort/PLZ" en "City/ZIP"))(br)(input :type "text" :name "surname")
+  (h1 ,(lang en "Order"
+             de "Bestellung"))
+  (label ,(lang en "Surname"
+                de "Vorname"))(br)(input :type "text"
+                                         :name "surname")
+  (label ,(lang en "Name"
+                de "Name"))(br)(input :type "text"
+                                      :name "surname")
+  (label ,(lang en "Street/No."
+                de "Straße/Nr."))(br)(input :type "text"
+                                            :name "surname")
+  (label ,(lang en "City/ZIP"
+                de "Ort/PLZ"))(br)(input :type "text"
+                                         :name "surname")
   (select :name "country" ,(flag-options "Germany"))
-  (label ,(lang de "Fon" en "Phone"))(br)(input :type "text" :name "surname")
-  (input :type "submit" :value ,(lang de "Bestellen..."
-                                      en "Order...")))
+  (label ,(lang de "Fon"
+                en "Phone"))(br)(input :type "text"
+                                       :name "surname")
+  (input :type "submit"
+         :value ,(lang en "Order…"
+                       de "Bestellen…")))

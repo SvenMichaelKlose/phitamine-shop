@@ -15,8 +15,8 @@
         `((div :class "status"
             ,@(page-status)
             ,@(when (logged-in?)
-                `((p ,(lang de "Eingeloggt als Benutzer &quot;"
-                            en "Logged in as user &quot;")
+                `((p ,(lang en "Logged in as user &quot;"
+                            de "Eingeloggt als Benutzer &quot;")
                     ,(user-alias)
                     "&quot;."))))))
     (div :class "header"

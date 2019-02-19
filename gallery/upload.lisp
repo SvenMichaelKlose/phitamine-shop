@@ -40,6 +40,6 @@
 
 (define-action upload-images :group gallery-upload)
 
-(define-redirect-catcher (uploaddone :status (lang de "Ihre Bilder wurden eingef&uuml;gt."
-                                                   en "Your images have been added.")))
+(define-redirect-catcher (uploaddone :status (lang en "Your images have been added."
+                                                   de "Ihre Bilder wurden eingef&uuml;gt.")))
 (set-action-group 'uploaddone 'gallery-upload)

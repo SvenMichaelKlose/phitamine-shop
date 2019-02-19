@@ -1,6 +1,7 @@
-(form :action "" :method "post" :enctype "multipart/form-data"
+(form :action ,(action-url :add 'upload-images) :method "post" :enctype "multipart/form-data"
   (h1 "Upload")
-  (a :class "cancel" :href ,(navi-url) ,(lang de "zur&uuml;ck" en "back"))
+  (a :class "cancel" :href ,(navi-url) ,(lang en "back"
+                                              de "zurück"))
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")
@@ -13,4 +14,4 @@
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")
   (input :type "file" :name "image[]" :size "10")
-  (input :type "submit" :value "Upload..."))
+  (input :type "submit" :value "Upload…"))
