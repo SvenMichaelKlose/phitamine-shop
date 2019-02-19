@@ -25,3 +25,15 @@ that's up, install the database by running
 'mysql -u root -p -h 0.0.0.0 fnord <init.sql'.
 The password is 'fnord'.  Now you can browse the empty shop
 at address http://localhost:19020.
+
+The username and password for the admin area is both 'pixel'.
+
+# Problems
+
+The CSS is out of date and needs to be redone, preferably
+with Flexbox.
+
+# Wanted features
+
+* Automatic URL rewrite in CSS through script, using
+  *BASE-URL*.
