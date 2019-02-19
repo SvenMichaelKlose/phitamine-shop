@@ -7,7 +7,7 @@
 
 (fn remove-image (x)
   (with (id    (number .x.)
-         name  (@ (find-image `(id . ,id)) 'name))
+         name  (assoc-value 'name (find-image (. 'id id))))
     (unlink-if-exists (path-original (user-id) name))
     (unlink-if-exists (path-thumbnail (user-id) name))
     (delete-images (list (. 'id id)))
