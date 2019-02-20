@@ -3,8 +3,6 @@
 (load "tre_modules/phitamine/make-project.lisp")
 (load "config-compile-time.lisp")
 
-(= (transpiler-assert? *php-transpiler*) t)
-
 (make-phitamine-project "Shop Hope Stamps"
     :files
       `("config-compile-time.lisp"
@@ -39,6 +37,8 @@
                    "templates/css-upload.lisp"
                    "config.lisp"
                    "toplevel.lisp")))
-    :script-path "/shop"
-    :filename    "index.php")
+    :script-path  ""
+    :filename     "index.php"
+    :transpiler   (!= (copy-transpiler *php-transpiler*)
+                    (= (transpiler-assert? !) *development-version?*)))
 (quit)
