@@ -3,7 +3,6 @@
   (head
     (meta :charset "utf-8")
     (title ,(page-title))
-    (base :href ,(path-parent (%aref *_server* "SCRIPT_NAME")))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/reset.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/main.css"))
     (link :rel "stylesheet" :type "text/css" :href ,(url "/css/jquery.jqzoom.css"))
@@ -20,11 +19,12 @@
                             de "Eingeloggt als Benutzer &quot;")
                     ,(user-alias)
                     "&quot;."))))))
-    (header
+    (div :class "header"
       (a :href ,(action-url *home-components*) :class "logo1" "")
-      (h1 "Phitamine Shop")
+      (h1 :class "stampheader" "Phitamine Shop")
       (a :href ,(action-url *home-components*) :class "logo2" ""))
-    (div :class "container"
-      (nav (table (tr (td ,(port 'navi)))))
-      (main ,(port 'content)))
-    (footer)))
+    (div :class "container2"
+      (div :class "container1"
+        (div :class "col1" (table (tr (td :class "navi" ,(port 'navi)))))
+        (div :class "col2" ,(port 'content))))
+    (div :class "footer")))
