@@ -1,4 +1,4 @@
-(define-template tpl-gallery-image-large :path "gallery/templates/image-large.lisp")
+(define-template tpl-gallery-image-large :path "src/gallery/templates/image-large.lisp")
 
 (fn gallery-large (x)
   (with (images     (gallery-find-images)

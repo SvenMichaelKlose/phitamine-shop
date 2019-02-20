@@ -1,9 +1,9 @@
 (var *page-title*)
 (var *page-status* nil)
 
-(var *js-jqzoom* ,(concat-stringtree (with-open-file in (open "templates/jqzoom.js" :direction 'input) (read-all-lines in))))
+(var *js-jqzoom* ,(concat-stringtree (with-open-file in (open "src/templates/jqzoom.js" :direction 'input) (read-all-lines in))))
 
-(define-template tpl-main :path "templates/main.lisp")
+(define-template tpl-main :path "src/templates/main.lisp")
 
 (fn page-title ()
   *page-title*)

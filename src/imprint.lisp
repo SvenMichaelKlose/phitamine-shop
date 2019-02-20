@@ -1,4 +1,4 @@
-(define-template tpl-imprint :path "templates/imprint.lisp")
+(define-template tpl-imprint :path "src/templates/imprint.lisp")
 
 (fn imprint (x)
   (= (page-title) (lang de "Impressum" en "Imprint"))

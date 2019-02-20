@@ -1,4 +1,4 @@
-(define-template tpl-login :path "templates/navigation-login.lisp")
+(define-template tpl-login :path "src/templates/navigation-login.lisp")
 
 (define-redirect-catcher (logoutdone :status (lang de "Sie sind ausgeloggt."
                                                    en "You are logged out.")))

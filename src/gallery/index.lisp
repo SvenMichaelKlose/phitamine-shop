@@ -1,8 +1,8 @@
 (var *gallery-page-size* 12)
 
-(define-template tpl-gallery-index       :path "gallery/templates/index.lisp")
-(define-template tpl-gallery-image       :path "gallery/templates/image.lisp")
-(define-template tpl-gallery-image-form  :path "gallery/templates/image-form.lisp")
+(define-template tpl-gallery-index       :path "src/gallery/templates/index.lisp")
+(define-template tpl-gallery-image       :path "src/gallery/templates/image.lisp")
+(define-template tpl-gallery-image-form  :path "src/gallery/templates/image-form.lisp")
 
 (fn make-image (pagination img)
   (funcall (? (logged-in?) ;(== (user-id) (@ img 'id_user)))

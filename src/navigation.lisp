@@ -1,7 +1,7 @@
-(define-template tpl-navigation-login   :path "templates/navigation-logged-in.lisp")
-(define-template tpl-navigation-nologin :path "templates/navigation-not-logged-in.lisp")
-(define-template tpl-navigation-contact :path "templates/navigation-contact.lisp")
-(define-template tpl-navigation-upload  :path "templates/navigation-upload.lisp")
+(define-template tpl-navigation-login   :path "src/templates/navigation-logged-in.lisp")
+(define-template tpl-navigation-nologin :path "src/templates/navigation-not-logged-in.lisp")
+(define-template tpl-navigation-contact :path "src/templates/navigation-contact.lisp")
+(define-template tpl-navigation-upload  :path "src/templates/navigation-upload.lisp")
 
 (@ (i '(login contact gallery-upload cart))
   (= (group-port i) 'navi))
