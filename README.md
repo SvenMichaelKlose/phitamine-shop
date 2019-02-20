@@ -1,5 +1,13 @@
 #!/bin/less
 
+phitamine shop
+==============
+
+A PHP shop written in Lisp.
+
+Demo: http://hugbox.org/pixel/software/phitamine-shop/
+
+
 # Overview
 
 This is a web shop for precious stamps created with phitamine and
