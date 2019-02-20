@@ -1,0 +1,3 @@
+changes of phitamine-shop-v0.1:
+  * New script 'css.php' rewrites URLs in style sheets in case the
+    shop is running in a subdirectory.
