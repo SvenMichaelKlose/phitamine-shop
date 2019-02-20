@@ -3,7 +3,7 @@
       (img :src ,(flag-src (param 'country)))
       (br)
       ,(tpl-gallery-title-page (param 'pagination)))
-  ,@(tpl-gallery-browser (param 'pagination) (param 'images))
+;  ,@(tpl-gallery-browser (param 'pagination) (param 'images))
   (a :class "back" :href ,(param 'link-back) ,(lang de "12er&#8208;&Uuml;bersicht" en "To overview"))
   ,@(& (logged-in?)
        `(,(? (== "1" (param 'f_public))
