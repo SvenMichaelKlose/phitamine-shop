@@ -13,7 +13,7 @@
 	padding-bottom: .3em;
 	padding-left: 40px;
 	padding-right: 40px;
-	background-image: url("/media/bg3.gif");
+	background-image: url('/media/bg3.gif');
 	color: #A90329;
 	font-size: 16pt;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", 'Verdana', 'Helvetica', 'Arial', 'sans-serif';
@@ -126,7 +126,7 @@ input {
 	right: 55%;
 	width: 75%;
 	min-height: 100%;
-	background: url(/media/bg3.gif);
+	background: url('/media/bg3.gif');
 }
 
 .container2 {
@@ -134,7 +134,7 @@ input {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	background-image: url(/media/bg124.gif);
+	background-image: url('/media/bg124.gif');
 }
 
 .col1,
@@ -237,7 +237,7 @@ input {
 .imageform select {
 	text-align: right;
 	padding-left: 10px;
-	background: url(/media/bg3.gif);
+	background: url('/media/bg3.gif');
 }
 
 .imageform label {
@@ -254,7 +254,7 @@ input {
 	font-size: 20px;
 	text-align: right;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", 'Verdana', 'Helvetica', 'Arial', 'sans-serif';
-	background-image: url(/media/bg3.gif);
+	background-image: url('/media/bg3.gif');
 }
 
 .col2 button,
@@ -406,7 +406,7 @@ button,
 	-webkit-border-radius:7px; /* Safari, Chrome */
 	-khtml-border-radius:7px; /* Konqueror */
 	border-radius:7px; /* CSS3 */
-	behavior:url(border-radius.htc); /*aktiviert ie*/
+	behavior:url('border-radius.htc'); /*aktiviert ie*/
 }
 
 .navi input[type="text"],
@@ -414,7 +414,7 @@ button,
 .navi textarea,
 .navi a:active,
 .navi a:hover {
-	background-image: url(/media/bg124.gif);
+	background-image: url('/media/bg124.gif');
 }
 
 .navi input[type="text"],
@@ -428,7 +428,7 @@ button,
 	border-top: 2px solid #7C7777;
 	border-left: 2px solid #7C7777;
 	border-right: 4px solid #FFF;
-	background-image: url(/media/bg124.gif);
+	background-image: url('/media/bg124.gif');
 }
 
 button,
@@ -615,17 +615,17 @@ h1 img {
 	-webkit-border-radius:7px; /* Safari, Chrome */
 	-khtml-border-radius:7px; /* Konqueror */
 	border-radius:7px; /* CSS3 */
-	behavior:url(border-radius.htc); /*aktiviert ie*/
+	behavior:url('border-radius.htc'); /*aktiviert ie*/
 	border-bottom: 2px solid #FFF;
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 2px solid #FFF;
-	background-image: url("/media/bg1.gif");
+	background-image: url('/media/bg1.gif');
 	z-index: 6050;
 }
 
 .back:hover{
-	background-image: url("/media/bg124.gif");
+	background-image: url('/media/bg124.gif');
 }
 
 .col2 h1,
@@ -642,12 +642,12 @@ h1 img {
 	-moz-border-radius:7px; /* Firefox */
 	-webkit-border-radius:7px; /* Safari, Chrome */
 	border-radius:7px; /* CSS3 */
-	behavior:url(border-radius.htc); /*aktiviert ie*/
+	behavior:url('border-radius.htc'); /*aktiviert ie*/
 	border-bottom: 3px solid #FFF;
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/media/bg3.gif");
+	background-image: url('/media/bg3.gif');
 	z-index: 6000;
 }
 
@@ -690,12 +690,12 @@ h1 img {
 	-webkit-border-radius:7px; /* Safari, Chrome */
 	-khtml-border-radius:7px; /* Konqueror */
 	border-radius:7px; /* CSS3 */
-	behavior:url(border-radius.htc); /*aktiviert ie*/
+	behavior:url('border-radius.htc'); /*aktiviert ie*/
 	border-bottom: 3px solid #FFF;
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/media/bg3.gif");
+	background-image: url('/media/bg3.gif');
 	z-index: 6000;
 }
 
@@ -713,12 +713,12 @@ h1 img {
 	-webkit-border-radius:7px; /* Safari, Chrome */
 	-khtml-border-radius:7px; /* Konqueror */
 	border-radius:7px; /* CSS3 */
-	behavior:url(border-radius.htc); /*aktiviert ie*/
+	behavior:url('border-radius.htc'); /*aktiviert ie*/
 	border-bottom: 3px solid #FFF;
 	border-top: 1px solid #7C7777;
 	border-left: 1px solid #7C7777;
 	border-right: 3px solid #FFF;
-	background-image: url("/media/bg3.gif");
+	background-image: url('/media/bg3.gif');
 	z-index: 6000;
 }
 
