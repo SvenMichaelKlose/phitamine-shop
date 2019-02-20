@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir compiled
-time tre makefiles/make.lisp && \
+time tre makefiles/shop.lisp && \
     cp -rv assets/* compiled
 tre makefiles/css.lisp
 mkdir -p compiled/gallery-images
