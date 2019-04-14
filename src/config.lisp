@@ -19,4 +19,4 @@
 (= *thumbnail-width*  200)
 (= *thumbnail-height* 240)
 
-(%%native "" "if (file_exists ('config.php')) include 'config.php';")
+(%= nil (%%native "" "if (file_exists ('config.php')) include 'config.php';"))
