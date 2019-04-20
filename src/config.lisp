@@ -1,6 +1,6 @@
 (date_default_timezone_set "Europe/Berlin")
 
-(var *available-languages* '(en de))
+(var *available-languages* '(:en :de))
 
 (= *home-components* '("gallery" "1"))
 
