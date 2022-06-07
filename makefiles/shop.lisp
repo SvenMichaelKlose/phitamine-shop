@@ -1,12 +1,12 @@
 (var *fallback-language* 'en)
 
-(load "tre_modules/phitamine/make-project.lisp")
+(load "../phitamine/make-project.lisp")
 (load "config-compile-time.lisp")
 
 (make-phitamine-project "Shop Hope Stamps"
     :files
       `("config-compile-time.lisp"
-        ,@(list+ "tre_modules/centralservices/"
+        ,@(list+ "../centralservices/"
                  `("pagination.lisp"
                    "user-management/login.lisp"
                    "cart.lisp"))
