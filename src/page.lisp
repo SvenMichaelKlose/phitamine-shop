@@ -1,7 +1,7 @@
 (var *page-title*)
 (var *page-status* nil)
 
-(var *js-jqzoom* ,(concat-stringtree (with-open-file in (open "src/templates/jqzoom.js" :direction 'input) (read-all-lines in))))
+(var *js-jqzoom* ,(flatten (with-open-file in (open "src/templates/jqzoom.js" :direction 'input) (read-all-lines in))))
 
 (define-template tpl-main :path "src/templates/main.lisp")
 
@@ -16,12 +16,12 @@
 (fn pagination-title (pagination)
   (with (from  (pagination-from pagination)
          to    (pagination-to pagination))
-    (string-concat (? (== to from)
-                      (pagination-page pagination)
-                      (+ from "&#8208;" to))
-                   (lang en " of "
-                         de " von ")
-                   (pagination-total pagination))))
+    (+ (? (== to from)
+          (pagination-page pagination)
+          (+ from "&#8208;" to))
+       (lang en " of "
+             de " von ")
+       (pagination-total pagination))))
 
 (fn page-status ()
   *page-status*)
